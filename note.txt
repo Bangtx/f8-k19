@@ -182,7 +182,12 @@ push
 pull
     git pull (update project)
 
+fetch:
+    git fetch
+    -> ko tim dc ten branch hoac muon cap nhat project
 
+merge:
+    git merge main
 
 
 
