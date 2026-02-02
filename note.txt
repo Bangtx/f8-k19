@@ -173,6 +173,10 @@ new branch: git branch <ten nhanh>
 nhay sang nhanh moi:
     git checkout feature/order
 
+tao file moi muon add vao git
+    git add <file path>
+    git add . (ko nen)
+
 commit
     git commit -m "init project"
 
@@ -189,6 +193,16 @@ fetch:
 merge:
     git merge main
 
+
+ve mat cau tao
+    - the du
+    - the rong
+
+ve tinh chat
+    - inline: in line -> trong dong
+        ex: span, a, img ...
+    - block -> khoi
+        p, h1, div ....
 
 
 
