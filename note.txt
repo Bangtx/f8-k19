@@ -1,0 +1,192 @@
+Trần xuân bảng
+1998
+gv tai f8
+OtaniUP - Techlead (fukoka - tokio - nigata)
+Nam Dinh
+Hien tai: Ha Dong
+Bach khoa
+
+Thanh Binh 2001:
+    tester/phien dich bo sung ky nang
+Lưu Thế Huy 2k1:
+    Soc son - dàng lam BA co mong muon lam dev - en doc hieu
+Nguyễn Hữu Bằng 2k2:
+    Ha dong - trc day học IT - Dang di lam trai nganh - co gang bo sung tieng anh
+Nguyễn Quang Thái 2k1:
+    Thach That: Lam test Fsoft: en 4 ky nang - co the lam dev
+Phạm Đăng khoa 2k5:
+    sai gon: sinh vien CS - muc tieu di lam IT - base JAVA
+Vũ Việt Hoàng 2k6:
+    Ha Noi: sinh vien IT - muc tieu di lam IT
+Nguyễn Phạm Minh Tiến 2k1:
+    sai gon: hoc IT, lam trai nganh
+Nguyễn Xuân Đạt 2k4:
+    Hưng Yên: SV năm cuối Kinh Kỹ - Sinh viên IT
+Nguyễn Phú Huy 2k4:
+    Vinh phúc - Hoàng mai: ĐH thăng long  - Đi làm
+Nguyễn Trần Quang Khải 2k4:
+    SV bach khoa - sv năm 3 - đi làm dev
+Nguyễn Nhật Minh 2k3:
+    Chùa láng: mới tốt nghiệp, base IT
+Phạm Trung Kiên - PH
+
+Dương Văn Tùng 2k6:
+    Ha noi Kim giang: học IT - FPT - muc tieu di lam IT - doc hieu
+Nguyễn Thanh Hoàng 1998:
+    network - system en: chuyen sang BE, cloud tieng anh tot
+Vũ Trí Tùng 1998:
+    Ha noi: sv IT - lam dev
+Nguyễn Đức Anh 2k6:
+     Bưu chính: sinh vien IT sinh vien IT: DataBase
+Võ Phạm Việt Phú 2k5:
+   BÌnh định: học ở sai gon: học IT -> học để đi làm
+Huỳnh Thái Sơn 1998:
+    Sai Gon: trai ngành -> cô gắng xem trước video của anh sơn
+Lâm Gia Thành 2k5:
+    Sinh viên IT bỏ ngành -> đi làm -> xem lại mic
+ Nguyễn Khánh Duy - Nghỉ
+
+Phạm Hưng Thịnh 2k2:
+    Đà nẵng -> sinh vien IT dã có KN làm fsoft (java - backend)
+Đỗ Quý Đạt Hoàng 2k3:
+    Hải phong: học bên nhật - sinh vien kinh doanh
+    tieng anh giao tiep
+    BA - PM
+Nguyễn Ngọc Trang 92:
+    Hà nội: designer UI/UX -> frontend
+                            Backend -> UX
+Phạm Duy Đông 2k4:
+    Sv Xay Dung: kinh ke xay dung
+        -> dang lam ky thuat may tinh
+        -> muon lam dev
+Hà Tiến Đại:
+    học k18
+Nguyễn Tiến Đạt 2k2 :
+    đà nẵng: marketing -> IT -> chuyen hẳn
+Nguyễn Võ Phúc Vinh 99:
+    HCM: marketing -> fullstack (wp, html/css/php) designer
+Lưu Quang Vinh 2k5:
+    hải dương. hoai đức: Fpt học đên js core -> đi làm
+Bùi Văn Hải 1993:
+    trà vinh - nv công chức: tập chung 100% IT - dang học thêm văn băng 2
+Nguyễn Thiên Khôi 2k1:
+    Khánh hòa: đang làm cty gia dinh -> học thêm IT
+Đoàn Quốc Anh 2k2:
+    Long an: làm trái ngành - SInh vien IT xem đến font-size
+Nguyễn Thành Nhân 1992:
+    đà nẵng: trái ngành -> muốn chuyển sang IT
+Trịnh Trung Hiếu 2k3:
+    Nam từ liêm: học Mỏ - học mạng máy tính -> muon chuyen sang web
+Nguyễn Bảo Toàn 2k6:
+    học FPT - web: done khóa pro
+Trần Thành Đạt 1996:
+    Hà nội trái ngành -> đinh chuyển ngành
+Nguyễn Thị Thanh Hằng 2k1:
+    Nhật - Phú thọ xem qua html/css
+
+web application
+
+Fullstack
+đẻ đi làm đc thig cân học nhiều hơn
+
+
+MInh trợ giảng chính
+Hoàng Kông Minh  (Kông Mink)
+Minh ở hoàng mai
+NHân viên vjo ở F8
+GK-sortware ->
+    Frontend + design
+Tình trang hôm nhân: chưa có
+Techsatck: JS/Python
+
+BTVN:
+    HTML/CSS Kong Minh
+ deadline: 8AM cuả ngày anh em học
+bài taap hôm nay (29-01)
+    -> deadldne: 8AM ngày 02/02 (thứ 2)
+neu vi lý do đặch bioeet muôn lui deadline
+    -> bào cho mình hoặc Minh
+        + lý do muộn
+        + ngày giờ cụ thể anh em nộp
+
+trươc khi kết thuc buôi -> noi trc buổi sau học gì
+  -> tim trên khóa video record xem treuowcsn (nếu có)
+
+Dự án
+    - dự án kết thuc html/css -> supper mini project
+    - dự án kết thúc js (html/css/js core)
+        -> mini project (f8 cung cấp backend)
+    - dự án kết thuc reactjs
+        ổn để anh đi kiếm job (frontend, f8 cung cấp backend)
+    - done hế
+        finnal project
+            - backend
+            - frontend
+            - deploy
+    trong quá trinh làm dự án
+        - nghỉ khoang 2 tuần
+        - meeting hàng nagy vơi anh em
+            + báo cáo tiên độ
+            + hộ trợ xyw lý vấn đe
+Yêu cầu cho khóa học
+    - ae bật cam trong luc học
+    - nếu cam hong báo trc
+        + néu tăt cam or gọi ko đươc -> vắng ko phép
+    - nếu anh em cân off 3 -0 5phut
+        -> nhắn trong chat "afk"
+        -> khi vao lại cũng báo "back"
+    - nếu ko chat Afk + ko gọi đc -> vắng
+    - vào muộn báo teruwcocs cho mình hoặc Kong MInh
+    - có file điểm danh -> đàu buổi Kong minh sẽ share
+
+video record (zoom)     video khóa pro       video sau buổ học
+     4 - 5 tísng                3-15phut            2.5 - 3 tiêng
+       xem trước              xem trước            xem sau
+
+
+
+
+
+*vắng quá 5% (co phep) or 3 buoi ko phep
+    -> ko đc giới thiêu viecj làm*
+
+GIT
+    - cài hệ điều hành (mac/ubuntu-linux)
+    - tạo tài khaorn git
+    - cài IDE (jetbrains: intelij)
+NHạp môn lập trình web
+
+
+lo trinh hoc: https://prnt.sc/hYd6vWMkABHe
+
+
+
+----------------------------
+Buoi 2: 2026-02-02
+
+clone: git clone <link du an>
+    -> main branch
+
+new branch: git branch <ten nhanh>
+    ex: git branch feature/order
+
+nhay sang nhanh moi:
+    git checkout feature/order
+
+commit
+    git commit -m "init project"
+
+push
+    git push
+
+
+
+
+
+
+
+
+
+
+
+
