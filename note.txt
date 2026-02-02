@@ -179,6 +179,8 @@ commit
 push
     git push
 
+pull
+    git pull (update project)
 
 
 
