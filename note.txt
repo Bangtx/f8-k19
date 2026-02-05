@@ -205,9 +205,63 @@ ve tinh chat
         p, h1, div ....
 
 
+----------------------------
+Buoi 3: 2026-02-05
+
+vscode ok, jetbranins ok
+
+JD tuyen dung:
+    - biet dung linux
+        -> tap dung lnux
+
+    -> docker
+
+ubuntu (linux)
+
+html semantic
+    - title
+    - h1 -> h6
+    - img (the rong)
+    - strong, em
+
+block
+    h1 -> h6, p
+
+inline
+    img, b, strong, i, em
+
+https://youtube.com -> duong dan tuyet doi
+
+duong dan tuong doi
+    ../about/index.html
+    ../product/index.html
 
 
+root folder ~ /
+
+f8-k19        │
+ │            │
+ ├─►home      │
+ │  │         ▼                                     1. click <a> -> about.html    href="about.html"
+ │  ├►index.html (<a href="...">click me</a>)
+ │  │                                               2. click <a> -> index product   href="../products/index.html
+ │  └►about.html
+ │                                                     truy cap den f8-k19 (back ve folder ben ngoai)
+ │                                                     truy cap den folder product
+ └─► products                                          truy cap den file index / detail
+     │
+     ├►index.html
+     │
+     └►detail.html
 
 
+http://localhost:63342/f8-k19/html/2026-02-05/about/index.html]
 
+table
+    - gop cot, hang
+
+form
+    - http (GET/POST)
+    - input
+    - button
 
