@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<!--https://api-gateway.f8.edu.vn/action_page.php-->
+
+<body>
+  <form method="post" action="https://api-gateway.f8.edu.vn/action_page.php">
+    <div>
+      <label for="name">Ho & Ten</label>
+      <input
+        id="name"
+        name="name"
+        placeholder="Tran Van A"
+        maxlength="10"
+        minlength="2"
+      >
+    </div>
+
+    <div>
+      <label for="email">email</label>
+      <input
+        id="email" name="email" type="email"
+        readonly
+      />
+
+    </div>
+
+    <div>
+      <label for="age">Tuoi</label>
+      <input id="age" name="age" placeholder="50" type="number" value="50">
+    </div>
+
+    <div>
+      <label for="address">Dia Chi</label>
+      <input id="address" name="address" placeholder="address" value="Tay Mo"/>
+    </div>
+
+    <div>
+      <label>ban da biet nhung nn lap trinh nao???</label>
+      <br>
+
+      <input id="python" type="checkbox" name="lang[]" value="python">
+      <label for="python">Python</label>
+      <br>
+
+      <input id="java" type="checkbox" name="lang[]" value="java">
+      <label for="java">java</label>
+      <br>
+
+      <input id="c++" type="checkbox" name="lang[]" value="c++">
+      <label for="c++">c++</label>
+
+    </div>
+
+    <div>
+      <label>ban muon hoc khoa hoc nao??</label>
+      <br>
+
+      <input id="backend" type="radio" name="course" value="backend">
+      <label for="backend">backend</label>
+      <br>
+
+      <input id="frontend" type="radio" name="course" value="frontend">
+      <label for="frontend">frontend</label>
+      <br>
+
+      <input id="fullstack" type="radio" name="course" value="fullstack">
+      <label for="fullstack">fullstack</label>
+      <br>
+    </div>
+
+    <div>
+      <label for="avatar">anh dai doen</label>
+      <input name="avatar" id="avatar" type="file" multiple>
+    </div>
+
+    <div>
+      <label for="time">ban muon hoc TG nao</label>
+      <br>
+      <select id="time" name="time">
+        <option value="morning">Sang</option>
+        <option value="afternoon">Chiru</option>
+        <option value="evening">Toi</option>
+      </select>
+    </div>
+
+    <textarea name="note">
+      Chao Buoi sang anh em
+      AE khoe nko
+    </textarea>
+
+    <div>
+      <label for="password">password</label>
+      <input id="password" type="password" name="password">
+    </div>
+
+    <div>
+      <input name="range" type="range" max="200" min="100">
+    </div>
+
+    <div>
+      <input type="submit" value="OK">
+      <button type="button">reset</button>
+    </div>
+  <form/>
+</body>
+</html>

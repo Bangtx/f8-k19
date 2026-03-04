@@ -265,3 +265,14 @@ form
     - input
     - button
 
+----------------------------
+Buoi 4: 2026-03-02
+
+HTTP
+    GET (default)
+    POST
+    PUT
+    PATCH
+    DELETE
+    OPTION
+    ...
