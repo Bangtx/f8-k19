@@ -276,3 +276,28 @@ HTTP
     DELETE
     OPTION
     ...
+
+----------------------------
+Buoi 5: 2026-03-02
+
+(*) cai nao cang cu the-chi tiet -> do uu tien cang cao
+
+inline > internal ??? external
+
+selector
+ ->> inline > id > class > tag name
+
+
+                       inline                    internal            external
+
+ anh huong              manh                    trung binh          trung binh
+
+
+ tai su dung            ko                      trung binh             manh
+
+
+ do uu tien            cao                     trung binh           trung binh
+
+
+class co the chung
+id la duy nhat
