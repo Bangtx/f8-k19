@@ -1,0 +1,23 @@
+h1 {
+    color: blue !important;
+}
+
+#heading {
+    color: red;
+}
+
+.text--blue {
+    color: blue;
+}
+
+.text--red {
+    color: red;
+}
+
+.text--green {
+    color: green;
+}
+
+.text--yellow {
+    color: yellow;
+}

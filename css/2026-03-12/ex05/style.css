@@ -1,0 +1,48 @@
+/*a:first-child {*/
+/*    color: red;*/
+/*}*/
+
+/*body > a + a {*/
+/*    color: green;*/
+/*}*/
+
+a[href='https://youtube.com'] {
+    color: red;
+}
+
+a[href='https://mail.google.com'] {
+    color: #f6b00d;
+}
+
+input[name='name'] {
+    color: red;
+}
+
+h1 ~ p {
+    color: red;
+}
+
+h2 ~ p {
+    color: blue;
+}
+
+/*input:checked ~ p {*/
+/*    color: red;*/
+/*}*/
+
+.do:checked~p{
+    color:red
+}
+.xanh:checked~p{
+    color:green
+}
+.vang:checked~p{
+    color:yellow
+}
+p:hover {
+    color: red;
+    cursor: pointer;
+}
+button:active {
+    color: red;
+}

@@ -1,0 +1,15 @@
+/*
+h1 + frontend + backend + cloud -> red
+*/
+
+/*.text--red {*/
+/*    color: red;*/
+/*}*/
+
+/*ul > li > ul > li {*/
+/*    color: black;*/
+/*}*/
+
+h1, body > ul > li > span {
+    color: red;
+}

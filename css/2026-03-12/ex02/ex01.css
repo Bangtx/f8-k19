@@ -1,0 +1,25 @@
+ul > li > ul > li {
+    color: blue;
+}
+
+/*
+15 -> 16
+22 -> 24
+30 -> 31
+
+-> 7 dong
+*/
+
+ul > li {
+    color: red;
+}
+
+/*
+12 -> 33
+
+-> 22 dong
+*/
+
+.text--green {
+    color: green;
+}

@@ -1,0 +1,12 @@
+/*ul > li:first-child {*/
+/*   color: red;*/
+/*}*/
+
+
+ul > li:nth-of-type(-1) {
+    color: red;
+}
+
+/*ul > li + li {*/
+/*    color: red;*/
+/*}*/

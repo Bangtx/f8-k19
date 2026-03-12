@@ -278,7 +278,7 @@ HTTP
     ...
 
 ----------------------------
-Buoi 5: 2026-03-02
+Buoi 6: 2026-03-02
 
 (*) cai nao cang cu the-chi tiet -> do uu tien cang cao
 
@@ -301,3 +301,49 @@ selector
 
 class co the chung
 id la duy nhat
+
+----------------------------
+Buoi 7: 2026-03-02
+
+important > inline > id > class > tag name
+
+
+the con chau:
+
+ul li {
+    css
+}
+
+the con truc tiep
+ul > li {
+    css
+}
+
+----------------------------
+Buoi 8: 2026-03-14
+text:
+    color
+    font-size
+    ...
+
+border-box
+    width
+    height
+    margin
+    padding
+    display
+    ....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
