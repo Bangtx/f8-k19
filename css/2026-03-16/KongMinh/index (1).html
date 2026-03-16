@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <!-- 
+    Text(typography)
+    - font-size kích thước của chữ
+    + px, rem, em (Phô biển)
+    + Sử dung nhiều nhất rem
+    
+    -->
+    <!-- 
+    html -> root toàn bộ trang
+
+    -->
+    <!-- 
+    - Đơn vị tuyệt đối
+    + px -> Tuyệt đối bất di bất dịch
+    + mm
+    + in 
+    -->
+    <!-- 
+    Tương đối: 
+    - %
+        + Phụ thuộc đơn vi có thuộc tính là tuyệt đối px  (Phân tử cha). Nếu không có phân tử cha nào thì nó đơn vị tuyệt đối của trình duyệt chiều ngang (HTML)
+    - rem
+        + Phụ thuộc html thẻ root có font-size 
+    - em
+        + Phụ thuộc phần tử cha -> có font-size không phải là em
+    - vw
+        - view-port -> Chiều ngang khung hình
+        1vw = 1% chiều rộng của khung hình
+    - vh
+    - view-height => Chiều cao của khung hình
+    - 1vh = 1vh chiều cao của khung hình
+    -  Build In -> Css có sẵn
+    - calc(100px - 3px) -> Hợp lệ
+    -->
+    <!-- 
+    Tổng kết:
+    - Đơn vị tuyệt đối: px 
+        + Trong trường hợp bất di bất dịch không muốn thay đổi chiều rộng và chiều cao của phần tử
+        + 1 Nếu như hộp chiều rộng và chiều dài ko thay nếu như co kéo trình duyệt: -> px 
+    - Đơn vi tương đối:  %
+        + Trong trường bạn muốn thay đổi kích thước khi co keo trình duyệt thì sử dung -> %
+    - Đơn vị  tương đối rem:
+        + chữ, padding, margin -> rem tailwindcss, bootstrap 5
+        + 1 rem  = 16px -> 10 / 16 = 0.625 x 100% = 62.5%
+          2 rem = 2 x 16 = 32px
+          html => font-size = 62.5% -> phụ thuộc đơn vị tuyệt  16px 
+          2 rem = 2 x 10 = 20px
+    - Đơn vị  tương đối rem: kế gồi đầu ko phải tuyệt đối -> ít dùng (Không sử dụng) -> Biết các hoạt động
+    - Đơn vi vw, vh -> Khi các bạn muốn các phẩn từ đó chiều toàn bộ khung hình sử dụng nó 
+    -> position : rời bộ cục luồng 
+    -->
+
+    <style>
+        /* .parent-2 {
+            width: 900px;
+            height: 900px;
+        } */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        /* Setting
+        - Cỡ chữ mặc định trình duyệt
+        - Nhỏ 12px
+        - Vừa 16px
+        - Lớn 20px
+
+        */
+        /* 16px -> Root */
+        /* 52px */
+        /* html {
+            font-size: 1rem;
+        } */
+        /*
+            - Công thức: 1rem = font-size của HTML
+            - Nếu font-size của html đang là tuyệt đối thì
+                1 rem = bằng đơn vị tuyệt đối
+            - Nếu font-size của html đang tương đối thì
+                1 rem = đơn vi tương đối x đơn vị trình duyệt (theo cỡ chữ)
+        */
+
+        /* .parent {
+            font-size: 30px;
+        } */
+
+        .desc {
+            /*
+            - Cỡ chữ: 30px
+            */
+            /* font-size: 1em; */
+            /*
+            <div class="parent">
+                <p class="desc">Đơn vị rem</p>
+            </div>
+            */
+        }
+
+        .heading {
+            display: inline-block;
+            height: 30%;
+            width: 30%;
+            background-color: red;
+        }
+        /*
+        em - 16px
+        3 x 2 x 1 x 16
+        3 x 20 = 60
+        3 x 1 x  3 x 16
+        */
+        /* .parent {
+            font-size: 3rem;
+        }
+        .parent-2 {
+            font-size: 1em;
+        }
+        .desc {
+            font-size: 3em;
+        } */
+        .header {
+            height: 30px;
+        }
+        .parent-21 {
+            display: inline-block;
+            width: 100vw;
+            height: 100vh;
+            height: calc(100vh - 30px);
+            /* width: 30%; */
+            background-color: red;
+            /*
+            heading -> phụ thuộc thằng cha tuyệt đối -> 90px
+            */
+            /* width: 300px; */
+        }
+    </style>
+
+    <body>
+        <body>
+            <div class="header">Header</div>
+            <div class="parent-2">
+                <h1 class="heading"></h1>
+            </div>
+            <!-- <div class="parent">
+                <div class="parent-2">
+                    <p class="desc">Đơn vị rem</p>
+                </div>
+            </div> -->
+        </body>
+    </body>
+</html>
