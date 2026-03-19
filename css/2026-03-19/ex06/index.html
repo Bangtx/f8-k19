@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+      /*.box {*/
+      /*    display: inline-block;*/
+      /*    height: 30px;*/
+      /*    width: 100px;*/
+      /*}*/
+
+      /*ul li {*/
+      /*    display: inline-block;*/
+      /*    padding: 10px;*/
+      /*}*/
+
+      p {
+          display: none;
+      }
+
+      #btn:checked ~ p {
+          display: block;
+      }
+
+      #btn:checked ~ button .show-btn {
+          display: none;
+      }
+
+      #btn:checked ~ button .hide-btn {
+          display: block;
+      }
+
+      .hide-btn {
+          display: none;
+      }
+  </style>
+
+</head>
+<body>
+
+<input type="checkbox" id="btn" hidden>
+<button>
+  <label for="btn" class="show-btn">show msg</label>
+  <label for="btn" class="hide-btn">an msg</label>
+</button>
+
+<p>MSG DA DC HIEN</p>
+
+<!--
+  bam bao nut "show msg"
+    -> "MSG DA DC HIEN"
+  bam vao nut "show msg" lan nua -> an "MSG DA DC HIEN"
+ -->
+
+
+<!--  <ul>-->
+<!--    <li>Trang chu</li>-->
+<!--    <li>San pham</li>-->
+<!--    <li>Lien he</li>-->
+<!--  </ul>-->
+<!--  <span class="box">Day la span</span>-->
+<!--  <span class="box">Day la span</span>-->
+<!--<img src="https://play-lh.googleusercontent.com/cpWmdyzME_WxTe5CPluEmyym_zzAWrWvCEIdlZjXu9PGNO6mUPfkEgj6qsKwoedmaA" width="100px">-->
+<!--<img src="https://play-lh.googleusercontent.com/cpWmdyzME_WxTe5CPluEmyym_zzAWrWvCEIdlZjXu9PGNO6mUPfkEgj6qsKwoedmaA" width="100px">-->
+<!--<img src="https://play-lh.googleusercontent.com/cpWmdyzME_WxTe5CPluEmyym_zzAWrWvCEIdlZjXu9PGNO6mUPfkEgj6qsKwoedmaA" width="100px">-->
+<!--<img src="https://play-lh.googleusercontent.com/cpWmdyzME_WxTe5CPluEmyym_zzAWrWvCEIdlZjXu9PGNO6mUPfkEgj6qsKwoedmaA" width="100px">-->
+<!--<img src="https://play-lh.googleusercontent.com/cpWmdyzME_WxTe5CPluEmyym_zzAWrWvCEIdlZjXu9PGNO6mUPfkEgj6qsKwoedmaA" width="100px">-->
+<!--<img src="https://play-lh.googleusercontent.com/cpWmdyzME_WxTe5CPluEmyym_zzAWrWvCEIdlZjXu9PGNO6mUPfkEgj6qsKwoedmaA" width="100px">-->
+</body>
+</html>

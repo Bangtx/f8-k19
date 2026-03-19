@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+      * {
+          margin: 0;
+          padding: 0;
+      }
+    .box-1, .box-2 {
+        width: 500px;
+        height: 150px;
+    }
+    .box-1 {
+        margin: -50px;
+        border: 20px solid red;
+        /*padding: -10px;*/
+    }
+    .box-2 {
+        margin: -10px;
+        border: 20px solid blue;
+    }
+  </style>
+<!--
+.box-1
+  margin 50px ->
+    kc box-1 vs body la 50px
+    kc box-1 vs box-2 la 50px
+
+.box-2
+  margin 70px ->
+    kc box-2 vs body la 70px
+    kc box-1 vs box-2 la 70px
+-->
+
+</head>
+<body>
+
+<div class="box-1">box 1</div>
+<div class="box-2">box 2</div>
+
+</body>
+</html>

@@ -356,11 +356,35 @@ box model
      │ └────────────────┘  │
      └─────────────────────┘
 
+----------------------------
+Buoi 9: 2026-03-26
 
+html:
+    inline:
+        - nam tren 1 dong
+        - ko set width height
+    block:
+        - chiem hey viewport
+        - set width height
+    inline-block:
+        - nam tren 1 dong, set width height
 
+-> display
+    - block
+    - inline
+    - inline-block
+    - none
+    - gird
+    - flex
 
+----------------------------
+Buoi 10: 2026-03-23
+box sizing, box shadow, opacity.....
 
+(*) position
 
+Buoi 11:
+(*) flex-box
 
 
 
