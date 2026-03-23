@@ -386,6 +386,15 @@ box sizing, box shadow, opacity.....
 Buoi 11:
 (*) flex-box
 
+relative
+    -> phan tu bi di chuyen khoi vi tri ban dau
+    -> ko roi khoi bo cuc ban dau
+
+absolute:
+    -> roi khoi bo cuc ban ban dau
+    -> co ve top, left dang phu thuoc vao body
+
+
 
 
 

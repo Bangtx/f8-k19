@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .overlay {
+        background-color: #cacaca;
+        width: 100vw;
+        height: 100vh;
+        /*opacity: 0.3;*/
+    }
+    .dialog {
+        width: 450px;
+        height: 400px;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    .dialog--header {
+        background-color: #236e14;
+        color: white;
+        font-size: 24px;
+        position: relative;
+        padding: 10px;
+    }
+    .dialog--header--icon {
+        position: absolute;
+        right: 10px;
+        top: 6px;
+        font-size: 34px;
+    }
+    .dialog--content {
+        padding: 16px;
+    }
+    .dialog--footer {
+        position: absolute;
+        bottom: 40px;
+        left: 230px;
+    }
+    .cancel-btn, .ok-btn {
+        padding: 4px;
+        position: absolute;
+        width: 200px;
+    }
+    .cancel-btn {
+        top: 0;
+        left: 0;
+        background-color: red;
+        color: white;
+    }
+    .ok-btn {
+        top: 0;
+        right: 0;
+        background-color: #236e14;
+        color: white;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="overlay">
+    <div class="dialog">
+      <div class="dialog--header">
+        <div class="dialog--header--title">Title</div>
+        <div class="dialog--header--icon">&times;</div>
+      </div>
+      <div class="dialog--content">
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+      </div>
+      <div class="dialog--footer">
+        <button class="cancel-btn">Cancel</button>
+        <button class="ok-btn">OK</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
