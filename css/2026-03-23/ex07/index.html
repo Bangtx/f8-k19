@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <input type="checkbox" hidden id="model-toggle">
+  <button><label for="model-toggle">Open dialog</label></button>
+
+  <div class="overlay">
+    <div class="model">
+      <h2>Dang ki tu van</h2>
+      <p>Dien thong tin de dc tu van lo trinh hoc phu hop</p>
+
+      <label for="model-toggle" class="close-btn">&times;</label>
+
+      <div class="user-info">
+        <label for="name">
+          Ho & Ten
+          <span>*</span>
+        </label>
+        <div>
+          <input type="text" id="name" placeholder="Nguyen Van A">
+          <div class="tooltip">
+            <span>Nhap ho va ten day du cua ban</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-info">
+        <label for="phone">
+          So Dien Thoai
+          <span>*</span>
+        </label>
+        <div>
+          <input type="text" id="phone" placeholder="023049103213">
+        </div>
+      </div>
+
+      <div class="user-info">
+        <label for="email">
+          Email
+        </label>
+        <div>
+          <input type="text" id="email" placeholder="example@test.com">
+        </div>
+      </div>
+
+      <div class="courses">
+        <span>
+          Khoa hoc quan tam
+          <span>*</span>
+        </span>
+        <div>
+          <input type="checkbox" id="htmlcss" name="courses[]" value="htmlcss">
+          <label for="htmlcss">Html & Css</label>
+        </div>
+
+        <div>
+          <input type="checkbox" id="js" name="courses[]" value="javascript">
+          <label for="js">javascript</label>
+        </div>
+
+        <div>
+          <input type="checkbox" id="fe" name="courses[]" value="frontend">
+          <label for="fe">HFrontend</label>
+        </div>
+      </div>
+
+      <button class="btn-submit"><label for="model-toggle">Dang Ky Tu Van Ngay</label></button>
+    </div>
+  </div>
+</body>
+</html>

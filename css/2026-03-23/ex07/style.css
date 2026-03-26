@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /*
+        size -> 16px
+        62.5 -> 10px
+    */
+    font-size: 62.5%;
+}
+
+body > button {
+    position: absolute;
+}
+
+.overlay {
+    background-color: rgba(4,6,13,0.3);
+    height: 100vh;
+    position: relative;
+    display: none;
+    /*opacity: 0.5;*/
+}
+
+#model-toggle:checked ~ .overlay {
+    display: block;
+}
+
+.model {
+    width: 400px;
+    /*height: 500px;*/
+    max-height: 43rem;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    border-radius: 20px;
+    padding: 2.4rem;
+}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+}
+
+.close-btn:hover {
+    cursor: pointer;
+}
+
+.model h2 {
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+.model p {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #64748b;
+    margin-bottom: 1.6rem;
+}
+
+.user-info {
+    margin: 1rem 0;
+    position: relative;
+}
+
+.user-info > label {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.user-info > span {
+    color: red;
+}
+
+.user-info input {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 0.1rem solid #e2e8f0;
+}
+
+.user-info input:hover {
+    border-color: #a1c4ef;
+}
+
+.user-info input:focus {
+    outline: #a1c4ef;
+}
+
+.courses > span {
+    font-size: 1.4rem;
+}
+
+.courses > span > span {
+    color: red;
+}
+
+.courses div {
+    font-size: 1.4rem;
+    padding: 0.4rem 0;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    background-color: #a855f7;
+    border: none;
+    margin: 1rem 0;
+}
+
+.tooltip {
+    color: white;
+    display: none;
+    position: absolute;
+    top: -2rem;
+}
+
+.tooltip span {
+    background-color: #1e293b;
+    padding: 4px;
+}
+
+.tooltip::after {
+    content: "";
+    width: 0;
+    /*height: 8px;*/
+    display: block;
+    margin: 3px 0 0 1rem;
+    /*background-color: #1e293b;*/
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #1e293b;
+}
+
+.user-info input:hover + .tooltip {
+    display: block;
+}

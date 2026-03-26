@@ -1,0 +1,18 @@
+.bg--red {
+    background-color: red;
+}
+.bg--green {
+    background-color: green;
+}
+.bg--blue {
+    background-color: blue;
+}
+.width--100 {
+    width: 100px;
+}
+.height--100 {
+    height: 100px;
+}
+.ma-4 {
+    margin: 8px;
+}
