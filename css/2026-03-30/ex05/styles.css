@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*body {*/
+/*    background-color: #ededed;*/
+/*}*/
+
+.container {
+    max-width: 1157px;
+    margin: auto;
+}
+
+.tab-bar {
+    display: flex;
+    gap: 8px;
+}
+
+#phone-tab:checked ~ .tab-bar .tab[for='phone-tab'] {
+    background: linear-gradient(to bottom, white 50%, #ffaab6);
+    border-bottom: 1px solid #d70018;
+    color: #d70018;
+}
+
+#tab-tab:checked ~ .tab-bar .tab[for='tab-tab'] {
+    background: linear-gradient(to bottom, white 50%, #ffaab6);
+    border-bottom: 1px solid #d70018;
+    color: #d70018;
+}
+
+.tab {
+    background: white;
+    color: black;
+    border-bottom: 1px solid #ccc;
+    height: 32px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab:hover {
+    background: linear-gradient(to bottom, white 50%, #eae4e4);
+}
+
+.text--d70018 {
+    color: #d70018;
+}
+
+.tablets, .mobiles {
+    display: none;
+}
+
+#phone-tab:checked ~ .product-list .mobiles {
+    display: block;
+}
+
+#tab-tab:checked ~ .product-list .tablets {
+    display: block;
+}

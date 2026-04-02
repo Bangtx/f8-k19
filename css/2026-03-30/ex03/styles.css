@@ -1,0 +1,44 @@
+.card {
+    width: 300px;
+    box-shadow: 5px 3px 5px #e2e8f0;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.card__icon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.card__title {
+    color: white;
+    background: linear-gradient(to bottom right, #ff82bf, #dd3588);
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card__title__name {
+    font-size: 32px;
+}
+
+.card__content {
+    background-color: #e2e8f0;
+    height: 100px;
+}
+
+.card__content__price__original {
+    text-decoration: line-through;
+}
+
+.card__content__price {
+    display: flex;
+    gap: 16px;
+}
+.card__content__bottom {
+    display: flex;
+    justify-content: space-between;
+}

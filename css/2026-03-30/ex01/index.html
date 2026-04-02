@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+    .box-1, .box-2, .box-3, .box-4 {
+        flex-basis: 50px;
+        width: 100px;
+        height: 100px;
+        flex-shrink: 0;
+        /*flex-grow: 1;*/
+    }
+    .box-1 {
+        background-color: #e86060;
+        /*flex-grow: 2;*/
+        /*flex-shrink: 1;*/
+    }
+    .box-2 {
+        background-color: #236e14;
+        /*flex-grow: 3;*/
+    }
+    .box-3 {
+        background-color: #64748b;
+    }
+    .box-4 {
+        background-color: #a855f7;
+    }
+    .flex-box {
+        display: flex;
+        border: 1px solid blue;
+        padding: 10px;
+        height: 400px;
+        /*flex-wrap: wrap;*/
+        align-items: center;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="flex-box">
+    <div class="box-1"></div>
+    <div class="box-2"></div>
+    <div class="box-3"></div>
+    <div class="box-4"></div>
+  </div>
+</body>
+</html>
