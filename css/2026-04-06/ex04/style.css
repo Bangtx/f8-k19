@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.blue {
+    background-color: #3b82f6;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    transition-property: all;
+    transition-duration: 500ms, 3s, 1s;
+    /*transition-delay: 1s;*/
+    /*transition-timing-function:;*/
+}
+
+.box:hover {
+    background-color: #ffff04;
+    width: 200px;
+    height: 150px;
+}
