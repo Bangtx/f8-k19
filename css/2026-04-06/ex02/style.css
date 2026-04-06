@@ -37,9 +37,14 @@ ul li:hover {
 
 @media screen and (max-width: 480px) {
     nav {
-        display: none;
+        /*display: none;*/
         top: 100%;
         position: absolute;
+        max-height: 0;
+        overflow: hidden;
+        transition-property: max-height;
+        transition-duration: 400ms;
+        transition-timing-function: ease;
     }
     ul {
         flex-direction: column;
@@ -54,6 +59,6 @@ ul li:hover {
         display: block;
     }
     #menu:checked ~ nav {
-        display: block;
+        max-height: 500px;
     }
 }
