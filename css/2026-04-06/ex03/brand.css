@@ -1,0 +1,21 @@
+.brands {
+    display: flex;
+    max-width: 100%;
+    overflow-y: auto;
+    padding: 8px 0;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #e4e4e4;
+    font-size: 14px;
+}
+
+.brand:hover {
+    border-color: #b8b8b8;
+    background: #ededed;
+}
