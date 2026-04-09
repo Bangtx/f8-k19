@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.blue {
+    background-color: #3b82f6;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 20px 20px;
+
+    animation-name: bangtx;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes bangtx {
+    from {
+        background-color: yellow;
+        transform: rotate(0deg);
+    }
+
+    to {
+        background-color: red;
+        transform: rotate(360deg);
+    }
+}
