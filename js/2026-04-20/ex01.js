@@ -95,23 +95,69 @@ const isBoy = false
 // const number = 2
 // console.log(!!!(number**2 >= 2))
 
+// callback function
+// todo is func
+// function onActive(todo) {
+//   console.log(2, 'start')
+//   console.log(3, todo())
+//   console.log(4, 'done')
+// }
+//
+// function doSomething() {
+//   console.log('hi do something')
+// }
+//
+//
+//
+// console.log(doSomething())
+// onActive(doSomething)
+
+/*
+### Bài 3: Callback nhận kết quả tính toán
+
+```js
+
+// Viết hàm cong(a, b, callback)
+
+// Bên trong: tính tổng, rồi gọi callback(tong)
+
+// Khi dùng: cong(3, 5, function(ketQua) { console.log(ketQua); })
+
+// Kết quả: 8
+* */
+
+// function sum(a, b, log) {
+//   const s = a + b
+//   log(s)
+// }
+//
+// function log(value) {
+//   console.log(value)
+// }
+//
+// sum(1, 2, log)
 
 
+// ax^2 + bx + c = 0
+// a, b, c cho trc
+// viet ham giai phuongh trinh (a, b, c)
 
+function solveQuadratic(a, b, c) {
+  const denta = b**2 - 4*a*c
 
+  if (denta < 0) {
+    console.log('pt no nghiem')
+  }
+  else if (denta === 0) {
+    const x = -b/(2*a)
+    console.log(x)
+  } else {
+    const x1 = (-b + denta**(1/2))/(2*a)
+    const x2 = (-b - denta**(1/2))/(2*a)
+    console.log(x1, x2)
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// x^2 - 4x + 4
+// x^2 - 6x + 5
+solveQuadratic(1, -6, 5)
