@@ -76,8 +76,8 @@ console.log('an nguyen'.indexOf('en??'))
 // bool: true/false --- dai so bool
 // is + adj / has + N
 // and or nor not
-const isStudent = true
-const isBoy = false
+// const isStudent = true
+// const isBoy = false
 // console.log(isStudent && isBoy)
 // console.log(isStudent || isBoy)
 // console.log(!!isStudent)
@@ -93,8 +93,9 @@ const isBoy = false
 * phu dingh cua sai -> dung
 * */
 // const number = 2
+// console.log(number**2 >= 2)
 // console.log(!!!(number**2 >= 2))
-
+//
 // callback function
 // todo is func
 // function onActive(todo) {
@@ -107,10 +108,9 @@ const isBoy = false
 //   console.log('hi do something')
 // }
 //
-//
-//
-// console.log(doSomething())
 // onActive(doSomething)
+
+// console.log(doSomething())
 
 /*
 ### Bài 3: Callback nhận kết quả tính toán
@@ -160,4 +160,4 @@ function solveQuadratic(a, b, c) {
 
 // x^2 - 4x + 4
 // x^2 - 6x + 5
-solveQuadratic(1, -6, 5)
+solveQuadratic(1, -4, 4)

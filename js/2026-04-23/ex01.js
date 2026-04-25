@@ -1,9 +1,10 @@
-const a = undefined
+// const a = 11
 // const b = 3
 
 // a chia b lay phan du
 /*
 * 2 / 3 = 0 du 2
+* 10 / 3 = 3 du 1
 * */
 
 // const number = 11
@@ -51,7 +52,7 @@ const a = undefined
 * => 1, 2: doi so / arguments (args)
 *
 * f() = 1
-*
+* y = 10
 * */
 
 // function doSomething() {
