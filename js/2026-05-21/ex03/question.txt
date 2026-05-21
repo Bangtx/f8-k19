@@ -1,0 +1,65 @@
+tưởng tượng đang làm tính năng in hóa đơn
+
+khi có khách mua hàng thi ng bán quet barcode
+
+quet xong thi co ds
+
+Sale Date: 2026/05/21
+Customer                                       Buyer:
+    name: Nguyen Van A                              WinMark 2 ba trung
+    age: 20                                         2 Ba trung - HN
+    address: Ha Dong Ha noi                         012345678
+
+No.    Product Name     Size     Quantity    Price     Amount
+ 1     Ao Thun            XL            1  200,000    200,000
+ 2     Ao Thun            XL            1  200,000    200,000
+                              Khuyen mai 50% chi KH than thiẻ
+
+
+meta: {
+    invoiceNo: "WM-20260521-0001",
+    saleDate: "2026/05/21",
+    currency: "VND",
+    paymentMethod: "Cash" // Tiền mặt / Chuyển khoản...
+  },
+
+  // 2. Đơn vị bán hàng / Cửa hàng (Seller)
+  // Lưu ý: Tương ứng với phần thông tin "Buyer" (WinMark) trong mô tả của bạn
+  seller: {
+    name: "WinMark 2 ba trung",
+    address: "2 Ba trung - HN",
+    phone: "012345678",
+    representative: "Đại diện WinMark"
+  },
+
+  // 3. Khách hàng mua hàng (Customer / Buyer)
+  // Khớp chính xác với khối "Customer" trong yêu cầu của bạn
+  customer: {
+    name: "Nguyen Van A",
+    age: 20,
+    address: "Ha Dong Ha noi"
+  },
+
+  // 4. Danh sách sản phẩm mua lẻ (Order Items)
+  items: [
+    {
+      no: 1,
+      name: "Ao Thun",
+      size: "XL",
+      quantity: 1,
+      price: 200000 // Đơn giá dạng số nguyên để dễ tính toán
+    },
+    {
+      no: 2,
+      name: "Ao Thun",
+      size: "XL",
+      quantity: 1,
+      price: 200000
+    }
+  ],
+
+  // 5. Chương trình ưu đãi / Giảm giá (Promotion & Discount)
+  promotion: {
+    description: "Khuyen mai 50% chi KH than thiet",
+    discountPercent: 50 // Giảm 50% tổng đơn hàng
+  }

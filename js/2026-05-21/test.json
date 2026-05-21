@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Alice",
+    "age": 23,
+    "status": "working",
+    "orders": [
+      {
+        "product": {
+          "id": 4,
+          "name": "PC",
+          "price": 800
+        },
+        "amount": 800
+      },
+      {
+        "product": {
+          "id": 5,
+          "name": "Monitor",
+          "price": 1500
+        },
+        "amount": 4500
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Bob",
+    "age": 25,
+    "status": "working",
+    "orders": [
+      {
+        "product": {
+          "id": 2,
+          "name": "Laptop",
+          "price": 3000
+        },
+        "amount": 12000
+      },
+      {
+        "product": {
+          "id": 5,
+          "name": "Monitor",
+          "price": 1500
+        },
+        "amount": 4500
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "John",
+    "age": 27,
+    "status": "working",
+    "orders": [
+      {
+        "product": {
+          "id": 1,
+          "name": "Phone",
+          "price": 1200
+        },
+        "amount": 2400
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "David",
+    "age": 23,
+    "status": "quit_job",
+    "orders": [
+      {
+        "product": {
+          "id": 1,
+          "name": "Phone",
+          "price": 1200
+        },
+        "amount": 1200
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Eve",
+    "age": 20,
+    "status": "working",
+    "orders": [
+      {
+        "product": {
+          "id": 3,
+          "name": "Tab",
+          "price": 2000
+        },
+        "amount": 4000
+      }
+    ]
+  }
+]
