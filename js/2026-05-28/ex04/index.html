@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div style="border: 1px solid red; padding: 12px">click me</div>
+  <button style="border: 1px solid blue; padding: 12px">BTN</button>
+
+  <script>
+    const divE = document.querySelector('div')
+    const buttonE = document.querySelector('button')
+
+    divE.addEventListener('click', () => {
+      console.log('click me')
+    })
+
+    buttonE.addEventListener('click', () => {
+      console.log('click btn')
+    })
+  </script>
+</body>
+</html>

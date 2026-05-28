@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FakeStore</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="header">
+                <div class="header-content">
+                    <div class="logo">
+                        <i class="bi bi-cart2"></i>
+                        <h2>FakeStore</h2>
+                    </div>
+                    <div class="search">
+                        <i class="bi bi-search icon-search"></i>
+                        <input type="text" placeholder="Tìm kiếm sản phẩm..." />
+                    </div>
+                    <div class="cart">
+                        <i class="bi bi-cart2"></i>
+                        <span class="cart-quantity">0</span>
+                    </div>
+                </div>
+            </header>
+
+            <main class="container">
+                <div class="content">
+                    <div class="sidebar">
+                        <h2 class="sidebar-title">Danh mục</h2>
+
+                        <div class="sidebar-content">
+                            <div class="categorie-item active">
+                                Tất cả sản phẩm
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-content">
+                        <h2 class="content-title">Tất cả sản phẩm</h2>
+                        <p class="content-desc">
+                            Hiển thị
+                            <span class="quantity-products"></span> sản phẩm
+                        </p>
+
+                        <div class="main-content">
+                            <div class="product-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <script src="./main.js"></script>
+    </body>
+</html>
+
+
+<!--<div class="product-item" data-id="${product.id}">-->
+<!--    <div class="product-item-img">-->
+<!--        <img-->
+<!--                src="${product.image}"-->
+<!--                alt=""-->
+<!--        />-->
+<!--    </div>-->
+<!--    <p class="product-item-title">-->
+<!--        ${product.title}-->
+<!--    </p>-->
+<!--    <p class="product-item-star">-->
+<!--        <i class="fa-solid fa-star"></i>-->
+<!--        ${product.rating.rate}-->
+<!--        <span class="quantity-star">(${product.rating.count})</span>-->
+<!--    </p>-->
+<!--    <div class="product-item-footer">-->
+<!--        <p class="product-item-price">-->
+<!--            $${product.price}-->
+<!--        </p>-->
+<!--        <button-->
+<!--                title="Thêm vào giỏ hàng"-->
+<!--                class="btn-cart"-->
+<!--        >-->
+<!--            <i class="bi bi-cart2"></i>-->
+<!--        </button>-->
+<!--    </div>-->
+<!--</div>-->
