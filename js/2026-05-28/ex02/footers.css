@@ -1,0 +1,18 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.promotion-box {
+    background-color: #f0fdf4;
+    padding: 16px 20px;
+    border-radius: 8px;
+    display: flex;
+    gap: 16px;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+}

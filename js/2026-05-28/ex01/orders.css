@@ -1,0 +1,24 @@
+.orders {
+    margin-top: 24px;
+}
+.orders th {
+    color: #8e8e8e;
+}
+
+.orders tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.orders {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.orders td:nth-child(2n) {
+    font-weight: bold;
+}
+
+td, th {
+    text-align: center;
+    padding: 8px 0;
+}

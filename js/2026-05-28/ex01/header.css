@@ -1,0 +1,85 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1280px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+}
+
+.header .container h1 {
+    font-size: 24px;
+}
+
+.header .container h1 span:first-child {
+    background-color: #1e293b;
+    color: white;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.header .description {
+    color: #929292;
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+.header .store-info > span {
+    color: #236e14;
+    background-color: #93cc89;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.header .store-info {
+    text-align: right;
+}
+
+.header .store-info > div span:first-child {
+    color: #1e293b;
+    font-weight: bold;
+}
+
+.header .store-info > div span:nth-child(2) {
+    color: #717171;
+    font-weight: bold;
+}
+
+.header .store-info > div div {
+    text-align: right;
+    margin: 8px 0;
+}
+
+.seller-buyer-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.seller-info, .buyer-info {
+    width: 49%;
+}
+
+.seller-info > div:first-child, .buyer-info > div:first-child {
+    color: #717171;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.seller-info > div:last-child {
+    margin-top: 8px;
+}
+
+.seller-info > div:last-child div {
+    margin-top: 8px;
+}
