@@ -1,0 +1,94 @@
+{
+  "customers": [
+    {
+      "id": "CUST-001",
+      "companyName": "Cty TNHH F8",
+      "email": "contact@f8.edu.vn",
+      "phone": "0987654321",
+      "address": "Hà Đông, Hà Nội",
+      "taxId": "018381123412",
+      "status": "Active"
+    },
+    {
+      "id": "CUST-002",
+      "companyName": "Cty Cổ Phần F9",
+      "email": "info@f9-corp.vn",
+      "phone": "0912345678",
+      "address": "Cầu Giấy, Hà Nội",
+      "taxId": "018381123413",
+      "status": "Active"
+    },
+    {
+      "id": "CUST-003",
+      "companyName": "Global Tech LLC",
+      "email": "hello@globaltech.com",
+      "phone": "0243111222",
+      "address": "Quận 1, TP. HCM",
+      "taxId": "0312345678",
+      "status": "Active"
+    },
+    {
+      "id": "CUST-004",
+      "companyName": "Công ty TNHH ABC",
+      "email": "sales@abc.vn",
+      "phone": "0909123456",
+      "address": "Hải Châu, Đà Nẵng",
+      "taxId": "0401234567",
+      "status": "Inactive"
+    },
+    {
+      "id": "CUST-005",
+      "companyName": "XYZ Corporation",
+      "email": "contact@xyz.com",
+      "phone": "0933456789",
+      "address": "Ba Đình, Hà Nội",
+      "taxId": "0109876543",
+      "status": "Active"
+    },
+    {
+      "id": "CUST-006",
+      "companyName": "Dịch vụ Vận tải Hùng Vương",
+      "email": "vantaihungvuong@gmail.com",
+      "phone": "0988776655",
+      "address": "Lê Chân, Hải Phòng",
+      "taxId": "0201122334",
+      "status": "Pending"
+    },
+    {
+      "id": "CUST-007",
+      "companyName": "Nông sản Sạch Miền Tây",
+      "email": "nongsanmientay@vn.net",
+      "phone": "0292333444",
+      "address": "Ninh Kiều, Cần Thơ",
+      "taxId": "1801998877",
+      "status": "Active"
+    },
+    {
+      "id": "CUST-008",
+      "companyName": "Phần mềm Việt Tiến",
+      "email": "support@viettien.software",
+      "phone": "0911223344",
+      "address": "Thanh Xuân, Hà Nội",
+      "taxId": "0102233445",
+      "status": "Inactive"
+    },
+    {
+      "id": "CUST-009",
+      "companyName": "Kiến trúc Không Gian Mới",
+      "email": "design@khonggianmoi.vn",
+      "phone": "0908765432",
+      "address": "Tân Bình, TP. HCM",
+      "taxId": "0305566778",
+      "status": "Active"
+    },
+    {
+      "id": "CUST-010",
+      "companyName": "Thiết bị Y tế Hoà Bình",
+      "email": "info@ytehoabinh.com",
+      "phone": "0246667778",
+      "address": "Đống Đa, Hà Nội",
+      "taxId": "0108899001",
+      "status": "Active"
+    }
+  ]
+}
