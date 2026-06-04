@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer UI - Pure CSS Modal</title>
+    <title>Customer Management Dashboard</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-        /* Modern CSS Reset & Setup */
+        :root {
+            /* Color Palette (Slate & Blue) */
+            --bg-body: #f1f5f9;
+            --bg-panel: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --danger: #ef4444;
+            --danger-bg: #fee2e2;
+            --success: #10b981;
+            --success-bg: #d1fae5;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -15,69 +29,122 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background-color: #f8fafc; /* Màu nền xám xanh nhạt */
-            color: #334155;
-            display: flex;
-            justify-content: center;
-            padding: 50px 20px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* --- TRICK: CHECKBOX HACK ĐỂ LÀM POPUP KHÔNG CẦN JS --- */
+        /* --- TRICK: CHECKBOX HACK --- */
         #popup-toggle {
             display: none;
         }
 
-        /* Style chung cho các khung (Panel) */
+        /* Navbar Header */
+        .navbar {
+            background-color: var(--bg-panel);
+            border-bottom: 1px solid var(--border-color);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            padding: 0 32px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navbar-brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand span {
+            color: var(--primary);
+        }
+
+        /* Main Content Container */
+        .main-container {
+            flex: 1;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        /* Panel (Card) */
         .panel {
-            background-color: #ffffff;
-            border: none; /* Bỏ viền đen */
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.05); /* Đổ bóng mềm */
-            width: 900px;
-            max-width: 100%;
+            background-color: var(--bg-panel);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            overflow: hidden;
         }
 
-        .panel-title {
-            text-align: left;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #0f172a;
-            margin-bottom: 28px;
-        }
-
-        /* --- DANH SÁCH CUSTOMER --- */
-        .toolbar {
+        .panel-header {
+            padding: 24px 32px;
+            border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 24px;
+            background-color: #fff;
+        }
+
+        .panel-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .search-wrapper {
+            position: relative;
         }
 
         .search-input {
-            width: 350px;
-            padding: 10px 16px;
-            border: 1px solid #cbd5e1;
+            width: 300px;
+            padding: 10px 16px 10px 40px;
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             font-family: inherit;
             font-size: 0.95rem;
             outline: none;
             transition: all 0.2s;
-            background-color: #fff;
+            background-color: var(--bg-body);
         }
 
         .search-input:focus {
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+            background-color: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
         }
 
-        /* Các nút bấm chung */
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 8px;
             border: none;
             border-radius: 8px;
             padding: 10px 20px;
@@ -90,37 +157,39 @@
         }
 
         .btn-add {
-            background-color: #2563eb; /* Nút màu xanh nổi bật */
+            background-color: var(--primary);
             color: #ffffff;
             box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
         }
 
         .btn-add:hover {
-            background-color: #1d4ed8;
-            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+            background-color: var(--primary-hover);
             transform: translateY(-1px);
         }
 
-        /* Table Style */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
         table {
             width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
+            border-collapse: collapse;
             text-align: left;
         }
 
         th, td {
-            padding: 16px 12px;
-            border-bottom: 1px solid #e2e8f0;
+            padding: 16px 32px;
+            border-bottom: 1px solid var(--border-color);
         }
 
         th {
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            color: #64748b;
+            color: var(--text-muted);
             letter-spacing: 0.05em;
-            border-bottom: 2px solid #e2e8f0;
+            background-color: #f8fafc;
         }
 
         tbody tr {
@@ -128,12 +197,43 @@
         }
 
         tbody tr:hover {
-            background-color: #f1f5f9; /* Đổi màu nhẹ khi hover dòng */
+            background-color: #f1f5f9;
+        }
+
+        /* Cột Customer với Tên và Email */
+        .customer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .customer-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .customer-email {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Badge Trạng thái */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-active {
+            background-color: var(--success-bg);
+            color: var(--success);
         }
 
         .actions {
             text-align: right;
-            font-size: 1.1rem;
             white-space: nowrap;
         }
 
@@ -145,30 +245,29 @@
             width: 32px;
             height: 32px;
             border-radius: 6px;
-            margin-left: 8px;
-            color: #64748b;
+            color: var(--text-muted);
             transition: all 0.2s;
+            font-size: 1.1rem;
         }
 
         .action-icon:hover {
-            background-color: #e2e8f0;
-            color: #0f172a;
+            background-color: var(--border-color);
+            color: var(--text-main);
         }
 
-        .action-icon[title="Delete"]:hover {
-            background-color: #fee2e2;
-            color: #ef4444; /* Đỏ khi hover nút xoá */
+        .action-icon.delete:hover {
+            background-color: var(--danger-bg);
+            color: var(--danger);
         }
 
-        /* --- POPUP (MODAL) --- */
         .popup-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: rgba(15, 23, 42, 0.4); /* Nền tối mờ */
-            backdrop-filter: blur(4px); /* Làm mờ background */
+            background-color: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(5px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -190,80 +289,92 @@
 
         .popup-content {
             position: relative;
-            width: 420px;
+            width: 600px; /* Mở rộng form một chút */
+            max-width: 90%;
             z-index: 1001;
             transform: scale(0.95) translateY(15px);
             opacity: 0;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .popup-content .panel-title {
-            margin-bottom: 24px;
-            font-size: 1.35rem;
+        .popup-body {
+            padding: 32px;
+        }
+
+        /* Form Grid System */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .full-width {
+            grid-column: span 2;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-main);
         }
 
         .form-input {
             width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #cbd5e1;
+            padding: 10px 14px;
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             font-family: inherit;
             font-size: 0.95rem;
             outline: none;
             transition: all 0.2s;
-            background-color: #f8fafc;
+            background-color: var(--bg-body);
         }
 
         .form-input:focus {
             background-color: #ffffff;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
         }
 
-        .form-actions {
+        .popup-footer {
+            padding: 20px 32px;
+            background-color: #f8fafc;
+            border-top: 1px solid var(--border-color);
             display: flex;
-            justify-content: flex-end; /* Đẩy 2 nút sang phải */
+            justify-content: flex-end;
             gap: 12px;
-            margin-top: 32px;
         }
 
-        .btn-action {
-            min-width: 90px;
-        }
-
-        /* Nút Close */
-        .btn-action[for="popup-toggle"] {
+        .btn-cancel {
             background-color: #ffffff;
-            color: #475569;
-            border: 1px solid #cbd5e1;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
         }
 
-        .btn-action[for="popup-toggle"]:hover {
+        .btn-cancel:hover {
             background-color: #f1f5f9;
-            color: #0f172a;
         }
 
-        /* Nút Save */
-        .btn-action[type="button"] {
-            background-color: #0f172a;
+        .btn-save {
+            background-color: var(--text-main);
             color: #ffffff;
         }
 
-        .btn-action[type="button"]:hover {
-            background-color: #1e293b;
+        .btn-save:hover {
+            background-color: #000000;
         }
 
-        /* --- LOGIC HIỂN THỊ POPUP --- */
         #popup-toggle:checked ~ .popup-overlay {
             opacity: 1;
             visibility: visible;
         }
 
-        /* Khi mở popup, hiệu ứng scale nhẹ tạo cảm giác mượt mà */
         #popup-toggle:checked ~ .popup-overlay .popup-content {
             transform: scale(1) translateY(0);
             opacity: 1;
@@ -272,101 +383,150 @@
 </head>
 <body>
 
-<!-- INPUT ẨN: Nắm giữ trạng thái Bật/Tắt của Popup -->
+<!-- INPUT ẨN: Nắm giữ trạng thái Popup -->
 <input type="checkbox" id="popup-toggle">
 
-<!-- Bảng Danh sách -->
-<div class="panel customer-list-panel">
-    <h2 class="panel-title">Customer</h2>
-
-    <div class="toolbar">
-        <input type="text" class="search-input" placeholder="Search">
-        <!-- Label này liên kết với checkbox, bấm vào đây tương đương bật checkbox -> Hiện popup -->
-        <label for="popup-toggle" class="btn btn-add">+ Add new</label>
+<nav class="navbar">
+    <div class="navbar-brand">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        CRM<span>System</span>
     </div>
+</nav>
 
-    <table>
-        <thead>
-        <tr>
-            <th style="width: 50px;">id</th>
-            <th style="width: 250px;">name</th>
-            <th style="width: 250px;">address</th>
-            <th>tax</th>
-            <th style="width: 80px;"></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>Cty TNHH F8</td>
-            <td>Ha DOnH, Ha Noi</td>
-            <td>018381123412</td>
-            <td class="actions">
-                <!-- Label edit cũng liên kết với checkbox -> Bấm vào icon bút chì là hiện popup -->
-                <label for="popup-toggle" class="action-icon" title="Edit">✎</label>
-                <span class="action-icon" title="Delete">🗑</span>
-            </td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Cty CO Phan F9</td>
-            <td>Ha DOnH, Ha Noi</td>
-            <td>018381123412</td>
-            <td class="actions">
-                <label for="popup-toggle" class="action-icon" title="Edit">✎</label>
-                <span class="action-icon" title="Delete">🗑</span>
-            </td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Cty TNHH F8</td>
-            <td>Ha DOnH, Ha Noi</td>
-            <td>018381123412</td>
-            <td class="actions">
-                <label for="popup-toggle" class="action-icon" title="Edit">✎</label>
-                <span class="action-icon" title="Delete">🗑</span>
-            </td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>Cty TNHH F8</td>
-            <td>Ha DOnH, Ha Noi</td>
-            <td>018381123412</td>
-            <td class="actions">
-                <label for="popup-toggle" class="action-icon" title="Edit">✎</label>
-                <span class="action-icon" title="Delete">🗑</span>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+<main class="main-container">
+    <div class="panel">
 
-<!-- POPUP MÀN HÌNH MỜ ĐÈ LÊN TRÊN -->
+        <div class="panel-header">
+            <h2 class="panel-title">Customers</h2>
+            <div class="toolbar">
+                <div class="search-wrapper">
+                    <span class="search-icon">⚲</span>
+                    <input type="text" class="search-input" placeholder="Search customers...">
+                </div>
+                <!-- Nút mở Popup -->
+                <label for="popup-toggle" class="btn btn-add">
+                    <span>+</span> Add New
+                </label>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th style="width: 80px;">ID</th>
+                    <th>Customer</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Tax ID</th>
+                    <th>Status</th>
+                    <th style="text-align: right;">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>#001</td>
+                    <td>
+                        <div class="customer-info">
+                            <span class="customer-name">Cty TNHH F8</span>
+                            <span class="customer-email">contact@f8.edu.vn</span>
+                        </div>
+                    </td>
+                    <td>0987 654 321</td>
+                    <td>Hà Đông, Hà Nội</td>
+                    <td>018381123412</td>
+                    <td><span class="badge badge-active">Active</span></td>
+                    <td class="actions">
+                        <label for="popup-toggle" class="action-icon" title="Edit">✎</label>
+                        <span class="action-icon delete" title="Delete">🗑</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#003</td>
+                    <td>
+                        <div class="customer-info">
+                            <span class="customer-name">Cty Cổ Phần F9</span>
+                            <span class="customer-email">info@f9-corp.vn</span>
+                        </div>
+                    </td>
+                    <td>0912 345 678</td>
+                    <td>Cầu Giấy, Hà Nội</td>
+                    <td>018381123412</td>
+                    <td><span class="badge badge-active">Active</span></td>
+                    <td class="actions">
+                        <label for="popup-toggle" class="action-icon" title="Edit">✎</label>
+                        <span class="action-icon delete" title="Delete">🗑</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#005</td>
+                    <td>
+                        <div class="customer-info">
+                            <span class="customer-name">Global Tech LLC</span>
+                            <span class="customer-email">hello@globaltech.com</span>
+                        </div>
+                    </td>
+                    <td>0243 111 222</td>
+                    <td>Quận 1, TP. HCM</td>
+                    <td>018381123412</td>
+                    <td><span class="badge badge-active">Active</span></td>
+                    <td class="actions">
+                        <label for="popup-toggle" class="action-icon" title="Edit">✎</label>
+                        <span class="action-icon delete" title="Delete">🗑</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</main>
+
 <div class="popup-overlay">
-    <!-- Label chìm làm nền đen, bấm ra ngoài popup sẽ tắt checkbox -> Đóng popup -->
+    <!-- Nền mờ, click để đóng -->
     <label for="popup-toggle" class="popup-backdrop"></label>
 
-    <!-- Form Add/Edit Customer -->
     <div class="panel popup-content">
-        <h2 class="panel-title">Add/ edit customer</h2>
-
-        <div class="form-group">
-            <input type="text" class="form-input" placeholder="name">
+        <div class="panel-header" style="border-bottom: none; padding-bottom: 0;">
+            <h2 class="panel-title">Customer Details</h2>
         </div>
 
-        <div class="form-group">
-            <input type="text" class="form-input" placeholder="tax">
+        <div class="popup-body">
+            <div class="form-grid">
+                <!-- Name -->
+                <div class="form-group full-width">
+                    <label class="form-label">Company Name *</label>
+                    <input type="text" class="form-input" placeholder="e.g. Cty TNHH F8">
+                </div>
+
+                <!-- Email & Phone -->
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" placeholder="contact@example.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" class="form-input" placeholder="0987 654 321">
+                </div>
+
+                <!-- Tax -->
+                <div class="form-group full-width">
+                    <label class="form-label">Tax ID (Mã số thuế)</label>
+                    <input type="text" class="form-input" placeholder="018381123412">
+                </div>
+
+                <!-- Address (Đã sửa lỗi chính tả) -->
+                <div class="form-group full-width">
+                    <label class="form-label">Physical Address</label>
+                    <input type="text" class="form-input" placeholder="Enter full address...">
+                </div>
+            </div>
         </div>
 
-        <div class="form-group">
-            <input type="text" class="form-input" placeholder="address">
-        </div>
-
-        <div class="form-actions">
-            <!-- Nút Close là một label. Khi popup đang mở (checkbox checked), bấm vào nó sẽ tắt checkbox -> Đóng popup -->
-            <label for="popup-toggle" class="btn btn-action">Close</label>
-            <!-- Nút Save (trong demo HTML tĩnh này thì chỉ làm nút trang trí) -->
-            <button type="button" class="btn btn-action">Save</button>
+        <div class="popup-footer">
+            <!-- Nút đóng form -->
+            <label for="popup-toggle" class="btn btn-cancel">Cancel</label>
+            <button type="button" class="btn btn-save">Save Customer</button>
         </div>
     </div>
 </div>
