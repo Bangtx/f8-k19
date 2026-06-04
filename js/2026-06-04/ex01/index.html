@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer UI - Pure CSS Modal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+        /* Modern CSS Reset & Setup */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: #f8fafc; /* Màu nền xám xanh nhạt */
+            color: #334155;
+            display: flex;
+            justify-content: center;
+            padding: 50px 20px;
+            min-height: 100vh;
+        }
+
+        /* --- TRICK: CHECKBOX HACK ĐỂ LÀM POPUP KHÔNG CẦN JS --- */
+        #popup-toggle {
+            display: none;
+        }
+
+        /* Style chung cho các khung (Panel) */
+        .panel {
+            background-color: #ffffff;
+            border: none; /* Bỏ viền đen */
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.05); /* Đổ bóng mềm */
+            width: 900px;
+            max-width: 100%;
+        }
+
+        .panel-title {
+            text-align: left;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 28px;
+        }
+
+        /* --- DANH SÁCH CUSTOMER --- */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .search-input {
+            width: 350px;
+            padding: 10px 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s;
+            background-color: #fff;
+        }
+
+        .search-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+
+        /* Các nút bấm chung */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .btn-add {
+            background-color: #2563eb; /* Nút màu xanh nổi bật */
+            color: #ffffff;
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-add:hover {
+            background-color: #1d4ed8;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Table Style */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 16px 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: #64748b;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        tbody tr {
+            transition: background-color 0.2s;
+        }
+
+        tbody tr:hover {
+            background-color: #f1f5f9; /* Đổi màu nhẹ khi hover dòng */
+        }
+
+        .actions {
+            text-align: right;
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+
+        .action-icon {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            margin-left: 8px;
+            color: #64748b;
+            transition: all 0.2s;
+        }
+
+        .action-icon:hover {
+            background-color: #e2e8f0;
+            color: #0f172a;
+        }
+
+        .action-icon[title="Delete"]:hover {
+            background-color: #fee2e2;
+            color: #ef4444; /* Đỏ khi hover nút xoá */
+        }
+
+        /* --- POPUP (MODAL) --- */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(15, 23, 42, 0.4); /* Nền tối mờ */
+            backdrop-filter: blur(4px); /* Làm mờ background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .popup-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: default;
+        }
+
+        .popup-content {
+            position: relative;
+            width: 420px;
+            z-index: 1001;
+            transform: scale(0.95) translateY(15px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .popup-content .panel-title {
+            margin-bottom: 24px;
+            font-size: 1.35rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s;
+            background-color: #f8fafc;
+        }
+
+        .form-input:focus {
+            background-color: #ffffff;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end; /* Đẩy 2 nút sang phải */
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .btn-action {
+            min-width: 90px;
+        }
+
+        /* Nút Close */
+        .btn-action[for="popup-toggle"] {
+            background-color: #ffffff;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+        }
+
+        .btn-action[for="popup-toggle"]:hover {
+            background-color: #f1f5f9;
+            color: #0f172a;
+        }
+
+        /* Nút Save */
+        .btn-action[type="button"] {
+            background-color: #0f172a;
+            color: #ffffff;
+        }
+
+        .btn-action[type="button"]:hover {
+            background-color: #1e293b;
+        }
+
+        /* --- LOGIC HIỂN THỊ POPUP --- */
+        #popup-toggle:checked ~ .popup-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Khi mở popup, hiệu ứng scale nhẹ tạo cảm giác mượt mà */
+        #popup-toggle:checked ~ .popup-overlay .popup-content {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<!-- INPUT ẨN: Nắm giữ trạng thái Bật/Tắt của Popup -->
+<input type="checkbox" id="popup-toggle">
+
+<!-- Bảng Danh sách -->
+<div class="panel customer-list-panel">
+    <h2 class="panel-title">Customer</h2>
+
+    <div class="toolbar">
+        <input type="text" class="search-input" placeholder="Search">
+        <!-- Label này liên kết với checkbox, bấm vào đây tương đương bật checkbox -> Hiện popup -->
+        <label for="popup-toggle" class="btn btn-add">+ Add new</label>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th style="width: 50px;">id</th>
+            <th style="width: 250px;">name</th>
+            <th style="width: 250px;">address</th>
+            <th>tax</th>
+            <th style="width: 80px;"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>Cty TNHH F8</td>
+            <td>Ha DOnH, Ha Noi</td>
+            <td>018381123412</td>
+            <td class="actions">
+                <!-- Label edit cũng liên kết với checkbox -> Bấm vào icon bút chì là hiện popup -->
+                <label for="popup-toggle" class="action-icon" title="Edit">✎</label>
+                <span class="action-icon" title="Delete">🗑</span>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Cty CO Phan F9</td>
+            <td>Ha DOnH, Ha Noi</td>
+            <td>018381123412</td>
+            <td class="actions">
+                <label for="popup-toggle" class="action-icon" title="Edit">✎</label>
+                <span class="action-icon" title="Delete">🗑</span>
+            </td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Cty TNHH F8</td>
+            <td>Ha DOnH, Ha Noi</td>
+            <td>018381123412</td>
+            <td class="actions">
+                <label for="popup-toggle" class="action-icon" title="Edit">✎</label>
+                <span class="action-icon" title="Delete">🗑</span>
+            </td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Cty TNHH F8</td>
+            <td>Ha DOnH, Ha Noi</td>
+            <td>018381123412</td>
+            <td class="actions">
+                <label for="popup-toggle" class="action-icon" title="Edit">✎</label>
+                <span class="action-icon" title="Delete">🗑</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- POPUP MÀN HÌNH MỜ ĐÈ LÊN TRÊN -->
+<div class="popup-overlay">
+    <!-- Label chìm làm nền đen, bấm ra ngoài popup sẽ tắt checkbox -> Đóng popup -->
+    <label for="popup-toggle" class="popup-backdrop"></label>
+
+    <!-- Form Add/Edit Customer -->
+    <div class="panel popup-content">
+        <h2 class="panel-title">Add/ edit customer</h2>
+
+        <div class="form-group">
+            <input type="text" class="form-input" placeholder="name">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-input" placeholder="tax">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-input" placeholder="address">
+        </div>
+
+        <div class="form-actions">
+            <!-- Nút Close là một label. Khi popup đang mở (checkbox checked), bấm vào nó sẽ tắt checkbox -> Đóng popup -->
+            <label for="popup-toggle" class="btn btn-action">Close</label>
+            <!-- Nút Save (trong demo HTML tĩnh này thì chỉ làm nút trang trí) -->
+            <button type="button" class="btn btn-action">Save</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
