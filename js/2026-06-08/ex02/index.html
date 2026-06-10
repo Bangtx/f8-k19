@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="name">
+<p></p>
+
+<script>
+    const input = document.getElementById('name')
+    const p = document.querySelector('p')
+
+    input.addEventListener('input', (e) => {
+      console.log(e.target.value)
+
+      p.innerHTML = e.target.value.replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+    })
+</script>
+</body>
+</html>

@@ -396,5 +396,13 @@ absolute:
 
 
 
+localStorage
+    key - value
+    luu vinh vien
+
+sessionStorage
+    key - value
+    luu cho den khi close tab
+
 
 

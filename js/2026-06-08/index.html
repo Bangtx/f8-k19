@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // sessionStorage.setItem('name', 'test')
+    // sessionStorage.setItem('age', '10')
+    // localStorage.clear()
+
+    document.cookie = "username=John Doe";
+    document.cookie = "age=30";
+    document.cookie = "address=Ha Noi; expires=Mon, 08 Jun 2026 12:26:00 UTC";
+
+    // const cookie = document.cookie
+    // console.log(typeof cookie, cookie)
+    const cookie = {}
+
+    for (c of document.cookie.split(';')) {
+      const [key, value] = c.split('=')
+      cookie[key.trim()] = value.trim()
+    }
+
+    console.log(cookie)
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input name="username" placeholder="username" value="emilys">
+    <input name="password" type="password" placeholder="password" value="emilyspass">
+    <button type="button">login</button>
+</div>
+
+
+<script>
+
+  const postReq = async (username, password) => {
+    try {
+      const res = await fetch(
+        'https://dummyjson.com/auth/login', {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            username: username,
+            password: password
+          })
+        }
+      )
+
+      return  await res.json()
+    } catch {
+      alert('login failed')
+    }
+  }
+
+  const onLogin = async () => {
+    const username = document.querySelector('input[name=username]').value
+    const password = document.querySelector('input[name=password]').value
+
+    username.replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+    password.replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+
+    const response = await postReq(username, password)
+    const {accessToken, refreshToken} = response
+
+    localStorage.setItem('accessToken', accessToken)
+    localStorage.setItem('refreshToken', refreshToken)
+  }
+
+  const loginBtn = document.querySelector('button')
+  const div = document.querySelector('form')
+
+  loginBtn.addEventListener('click', onLogin)
+  div.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') onLogin()
+  })
+
+</script>
+</body>
+</html>
