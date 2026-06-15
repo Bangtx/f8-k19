@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Lý Đơn Hàng | ShopAdmin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+      :root {
+          --primary-color: #3498db;
+          --dark-color: #2c3e50;
+          --bg-color: #f4f7f6;
+          --success: #27ae60;
+          --danger: #e74c3c;
+          --warning: #f39c12;
+          --info: #2980b9;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+      body { background-color: var(--bg-color); }
+
+      .container { display: flex; min-height: 100vh; }
+
+      /* Sidebar */
+      .sidebar { width: 260px; background: var(--dark-color); color: white; padding: 25px; position: sticky; top: 0; height: 100vh; }
+      .sidebar h2 { margin-bottom: 40px; text-align: center; color: var(--primary-color); }
+      .sidebar ul { list-style: none; }
+      .sidebar ul li { padding: 15px; cursor: pointer; border-radius: 8px; margin-bottom: 5px; color: #ecf0f1; transition: 0.3s; }
+      .sidebar ul li:hover, .sidebar ul li.active { background: #34495e; color: var(--primary-color); }
+      .sidebar ul li i { margin-right: 12px; width: 20px; }
+
+      /* Main Content */
+      .main-content { flex: 1; padding: 30px; }
+
+      header {
+          display: flex; justify-content: space-between; align-items: center;
+          background: white; padding: 15px 25px; border-radius: 12px; margin-bottom: 30px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      }
+
+      .search-bar input { padding: 10px 20px; width: 350px; border: 1px solid #ddd; border-radius: 25px; outline: none; }
+
+      /* Stats Cards */
+      .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px; }
+      .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 5px solid #ccc; }
+      .card.blue { border-left-color: var(--info); }
+      .card.orange { border-left-color: var(--warning); }
+      .card.green { border-left-color: var(--success); }
+      .card.red { border-left-color: var(--danger); }
+      .card h3 { font-size: 0.85rem; color: #7f8c8d; text-transform: uppercase; margin-bottom: 8px; }
+      .card p { font-size: 1.6rem; font-weight: bold; color: var(--dark-color); }
+
+      /* Order Tabs & Filters */
+      .order-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+      .tabs { display: flex; gap: 10px; }
+      .tab { padding: 8px 16px; border: none; background: #eee; border-radius: 20px; cursor: pointer; font-size: 0.9rem; transition: 0.3s; }
+      .tab.active { background: var(--dark-color); color: white; }
+
+      /* Table Area */
+      .table-container { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+      table { width: 100%; border-collapse: collapse; }
+      th { text-align: left; padding: 15px; background: #f8f9fa; color: #666; font-size: 0.9rem; border-bottom: 2px solid #eee; }
+      td { padding: 15px; border-bottom: 1px solid #eee; font-size: 0.95rem; }
+
+      /* Badge Status */
+      .badge { padding: 6px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
+      .badge.pending { background: #fff3e0; color: #e67e22; }
+      .badge.shipping { background: #e1f5fe; color: #0288d1; }
+      .badge.completed { background: #e8f5e9; color: #27ae60; }
+      .badge.cancelled { background: #ffebee; color: #c0392b; }
+
+      /* Action Buttons */
+      .btn-action { border: none; background: #f0f2f5; padding: 8px; border-radius: 6px; cursor: pointer; color: #555; transition: 0.2s; }
+      .btn-action:hover { background: var(--primary-color); color: white; }
+      .btn-export { background: var(--primary-color); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+
+      small { color: #7f8c8d; display: block; margin-top: 2px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <aside class="sidebar">
+    <h2>ShopAdmin</h2>
+    <ul>
+      <li><i class="fas fa-home"></i> Tổng quan</li>
+      <li><i class="fas fa-box"></i> Sản phẩm</li>
+      <li class="active"><i class="fas fa-shopping-cart"></i> Đơn hàng</li>
+      <li><i class="fas fa-users"></i> Khách hàng</li>
+      <li><i class="fas fa-chart-line"></i> Báo cáo</li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <header>
+      <div class="search-bar">
+        <input type="text" placeholder="Tìm mã đơn, tên khách hàng...">
+      </div>
+      <button class="btn-export"><i class="fas fa-download"></i> Xuất Excel</button>
+    </header>
+
+    <section class="stats">
+      <div class="card blue">
+        <h3>Tổng đơn hàng</h3>
+        <p>1,024</p>
+      </div>
+      <div class="card orange">
+        <h3>Đang xử lý</h3>
+        <p>15</p>
+      </div>
+      <div class="card green">
+        <h3>Thành công</h3>
+        <p>980</p>
+      </div>
+      <div class="card red">
+        <h3>Đã hủy</h3>
+        <p>29</p>
+      </div>
+    </section>
+
+    <section class="table-container">
+      <div class="order-controls">
+        <div class="tabs">
+          <button class="tab active">Tất cả</button>
+          <button class="tab">Chờ xử lý</button>
+          <button class="tab">Đang giao</button>
+          <button class="tab">Đã xong</button>
+        </div>
+        <div class="date-filter">
+          <input type="date" style="padding: 5px; border: 1px solid #ddd; border-radius: 5px;">
+        </div>
+      </div>
+
+      <table>
+        <thead>
+        <tr>
+          <th>Mã đơn</th>
+          <th>Khách hàng</th>
+          <th>Sản phẩm</th>
+          <th>Tổng tiền</th>
+          <th>Trạng thái</th>
+          <th>Thao tác</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><strong>#ORD-7721</strong></td>
+          <td>Nguyễn Văn An<br><small>0912.345.xxx</small></td>
+          <td>iPhone 15 Pro Max (x1)</td>
+          <td>32.500.000đ</td>
+          <td><span class="badge shipping">Đang giao</span></td>
+          <td>
+            <button class="btn-action" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+            <button class="btn-action" title="In hóa đơn"><i class="fas fa-print"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>#ORD-7722</strong></td>
+          <td>Lê Thị Bình<br><small>0988.777.xxx</small></td>
+          <td>AirPods Pro (x2), Case (x2)</td>
+          <td>11.200.000đ</td>
+          <td><span class="badge completed">Hoàn thành</span></td>
+          <td>
+            <button class="btn-action" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+            <button class="btn-action" title="In hóa đơn"><i class="fas fa-print"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>#ORD-7723</strong></td>
+          <td>Phạm Minh Cường<br><small>0355.123.xxx</small></td>
+          <td>Ốp lưng Silicon</td>
+          <td>250.000đ</td>
+          <td><span class="badge pending">Chờ xử lý</span></td>
+          <td>
+            <button class="btn-action" title="Xử lý"><i class="fas fa-check"></i></button>
+            <button class="btn-action" title="Hủy đơn"><i class="fas fa-times"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>#ORD-7724</strong></td>
+          <td>Hoàng Anh Tuấn<br><small>0909.888.xxx</small></td>
+          <td>Sạc nhanh 20W</td>
+          <td>490.000đ</td>
+          <td><span class="badge cancelled">Đã hủy</span></td>
+          <td>
+            <button class="btn-action" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</div>
+
+</body>
+</html>

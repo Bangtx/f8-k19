@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chỉnh sửa sản phẩm | ShopAdmin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+      :root {
+          --primary-color: #3498db;
+          --dark-color: #2c3e50;
+          --bg-color: #f4f7f6;
+          --success: #27ae60;
+          --border: #dcdde1;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+      body { background-color: var(--bg-color); color: var(--dark-color); }
+      .container { display: flex; min-height: 100vh; }
+
+      /* Sidebar */
+      .sidebar { width: 260px; background: var(--dark-color); color: white; padding: 25px; position: sticky; top: 0; height: 100vh; }
+      .sidebar h2 { margin-bottom: 40px; text-align: center; color: var(--primary-color); }
+      .sidebar ul { list-style: none; }
+      .sidebar ul li { padding: 15px; cursor: pointer; border-radius: 8px; margin-bottom: 5px; color: #ecf0f1; }
+      .sidebar ul li.active { background: #34495e; color: var(--primary-color); }
+
+      /* Main Content */
+      .main-content { flex: 1; padding: 40px; }
+      .header-actions { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+      .btn-back { text-decoration: none; color: #7f8c8d; font-weight: 500; }
+
+      /* Form Layout */
+      .product-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
+      .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 20px; }
+      .card h3 { margin-bottom: 20px; font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+
+      /* Input Styles */
+      .form-group { margin-bottom: 20px; }
+      .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+      .form-group input, .form-group select, .form-group textarea {
+          width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; outline: none; transition: 0.3s;
+      }
+      .form-group input:focus { border-color: var(--primary-color); }
+
+      /* Image Upload Box */
+      .image-upload {
+          border: 2px dashed var(--border); border-radius: 12px; padding: 40px; text-align: center; cursor: pointer; transition: 0.3s;
+      }
+      .image-upload:hover { border-color: var(--primary-color); background: #f0f7ff; }
+      .image-upload i { font-size: 2rem; color: #bdc3c7; margin-bottom: 10px; }
+      .preview-img { width: 100%; margin-top: 15px; border-radius: 8px; display: none; }
+
+      /* Footer Actions */
+      .form-footer {
+          margin-top: 20px; display: flex; justify-content: flex-end; gap: 15px; padding: 20px; background: white; border-radius: 12px;
+      }
+      .btn { padding: 12px 25px; border-radius: 8px; border: none; font-weight: 600; cursor: pointer; }
+      .btn-save { background: var(--success); color: white; }
+      .btn-cancel { background: #eee; color: #7f8c8d; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <aside class="sidebar">
+    <h2>ShopAdmin</h2>
+    <ul>
+      <li><i class="fas fa-home"></i> Tổng quan</li>
+      <li class="active"><i class="fas fa-box"></i> Sản phẩm</li>
+      <li><i class="fas fa-shopping-cart"></i> Đơn hàng</li>
+      <li><i class="fas fa-users"></i> Khách hàng</li>
+      <li><i class="fas fa-chart-line"></i> Báo cáo</li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <div class="header-actions">
+      <a href="#" class="btn-back"><i class="fas fa-arrow-left"></i> Quay lại danh sách</a>
+      <h2>Chỉnh sửa sản phẩm</h2>
+    </div>
+
+    <form id="productForm">
+      <div class="product-grid">
+        <div class="left-col">
+          <div class="card">
+            <h3>Thông tin chung</h3>
+            <div class="form-group">
+              <label>Tên sản phẩm</label>
+              <input type="text" placeholder="Ví dụ: iPhone 15 Pro Max" value="iPhone 15 Pro Max">
+            </div>
+            <div class="form-group">
+              <label>Mô tả sản phẩm</label>
+              <textarea rows="5" placeholder="Nhập đặc điểm nổi bật..."></textarea>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Giá cả & Kho hàng</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div class="form-group">
+                <label>Giá bán (VNĐ)</label>
+                <input type="number" value="32500000">
+              </div>
+              <div class="form-group">
+                <label>Giá vốn (VNĐ)</label>
+                <input type="number" value="28000000">
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div class="form-group">
+                <label>Mã SKU</label>
+                <input type="text" value="IP15PM-BLUE-256">
+              </div>
+              <div class="form-group">
+                <label>Số lượng tồn kho</label>
+                <input type="number" value="45">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-col">
+          <div class="card">
+            <h3>Hình ảnh sản phẩm</h3>
+            <div class="image-upload" onclick="document.getElementById('fileInput').click()">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <p>Nhấp để tải ảnh lên</p>
+              <input type="file" id="fileInput" hidden onchange="previewImage(event)">
+              <img id="imgPreview" class="preview-img" src="#" alt="Preview">
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Phân loại</h3>
+            <div class="form-group">
+              <label>Danh mục</label>
+              <select>
+                <option>Điện thoại</option>
+                <option>Máy tính bảng</option>
+                <option>Phụ kiện</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Trạng thái</label>
+              <select>
+                <option>Đang bán</option>
+                <option>Ngừng kinh doanh</option>
+                <option>Hết hàng</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-footer">
+        <button type="button" class="btn btn-cancel">Hủy bỏ</button>
+        <button type="submit" class="btn btn-save">Lưu thay đổi</button>
+      </div>
+    </form>
+  </main>
+</div>
+
+<script>
+  function previewImage(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+      const output = document.getElementById('imgPreview');
+      output.src = reader.result;
+      output.style.display = 'block';
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+
+</body>
+</html>

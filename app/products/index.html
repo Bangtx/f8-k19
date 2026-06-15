@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Lý Sản Phẩm | ShopAdmin</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<div class="container">
+  <aside class="sidebar">
+    <h2>ShopAdmin</h2>
+    <ul>
+      <li><i class="fas fa-home"></i> Tổng quan</li>
+      <li class="active"><i class="fas fa-box"></i> Sản phẩm</li>
+      <li><i class="fas fa-shopping-cart"></i> Đơn hàng</li>
+      <li><i class="fas fa-users"></i> Khách hàng</li>
+      <li><i class="fas fa-chart-line"></i> Báo cáo</li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <header>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Tìm tên sản phẩm, mã SKU...">
+      </div>
+      <div class="user-actions">
+        <button class="btn-add" onclick="toggleModal()"><i class="fas fa-plus"></i> Thêm sản phẩm</button>
+      </div>
+    </header>
+
+    <section class="stats">
+      <div class="card">
+        <h3>Tổng sản phẩm</h3>
+        <p>1,240</p>
+      </div>
+      <div class="card">
+        <h3>Sắp hết hàng</h3>
+        <p style="color: #e74c3c;">12</p>
+      </div>
+      <div class="card">
+        <h3>Danh mục</h3>
+        <p>15</p>
+      </div>
+    </section>
+
+    <section class="table-container">
+      <div class="table-header">
+        <h3>Danh mục sản phẩm</h3>
+        <div class="filters">
+          <select>
+            <option>Tất cả danh mục</option>
+            <option>Điện thoại</option>
+            <option>Phụ kiện</option>
+          </select>
+        </div>
+      </div>
+      <table>
+        <thead>
+        <tr>
+          <th>Hình</th>
+          <th>Thông tin sản phẩm</th>
+          <th>Danh mục</th>
+          <th>Giá bán</th>
+          <th>Tồn kho</th>
+          <th>Thao tác</th>
+        </tr>
+        </thead>
+        <tbody id="productTableBody">
+        <tr>
+          <td><img src="https://picsum.photos/50" alt="sp" class="img-thumb"></td>
+          <td><strong>iPhone 15 Pro</strong><br><small>SKU: IP15P-01</small></td>
+          <td>Điện thoại</td>
+          <td>28.900.000đ</td>
+          <td>45</td>
+          <td>
+            <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+            <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="https://picsum.photos/51" alt="sp" class="img-thumb"></td>
+          <td><strong>Tai nghe AirPods Pro</strong><br><small>SKU: AP-02</small></td>
+          <td>Phụ kiện</td>
+          <td>5.500.000đ</td>
+          <td class="stock-low">3 (Cảnh báo)</td>
+          <td>
+            <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+            <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</div>
+
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <h3>Thêm sản phẩm mới</h3>
+    <form id="productForm">
+      <input type="text" placeholder="Tên sản phẩm" required>
+      <input type="text" placeholder="Giá bán" required>
+      <input type="number" placeholder="Số lượng tồn kho" required>
+      <div class="modal-buttons">
+        <button type="button" class="btn-cancel" onclick="toggleModal()">Hủy</button>
+        <button type="submit" class="btn-add">Lưu sản phẩm</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
