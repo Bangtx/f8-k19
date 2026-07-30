@@ -1,4 +1,13 @@
+import { NavLink, Link, useNavigate } from "react-router"
+
 const HeaderBar = ({total}) => {
+
+  const navigate = useNavigate()
+
+  const goToHome = () => {
+    navigate('/')
+  }
+
   return (
     <header className="header">
       <div className="header-inner">
@@ -7,9 +16,10 @@ const HeaderBar = ({total}) => {
         </div>
 
         <nav className="nav">
-          <a href="#">Home</a>
-          <a href="#">Products</a>
-          <a href="#">Categories</a>
+          {/*<span onClick={goToHome}>Home</span>*/}
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/products">Products</NavLink>
+          <NavLink to="#">Categories</NavLink>
         </nav>
 
         <div className="cart">
