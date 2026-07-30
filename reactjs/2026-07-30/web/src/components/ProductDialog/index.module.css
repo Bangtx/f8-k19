@@ -1,0 +1,146 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+}
+
+.dialog {
+    width: 600px;
+    max-width: calc(100vw - 32px);
+
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .2);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 24px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.closeBtn {
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.closeBtn:hover {
+    background: #f3f4f6;
+}
+
+.body {
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.row {
+    display: flex;
+    gap: 16px;
+}
+
+.row .formGroup {
+    flex: 1;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formGroup label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+    width: 100%;
+
+    padding: 10px 12px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.formGroup textarea {
+    resize: vertical;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+
+    padding: 18px 24px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+.cancelBtn {
+    padding: 10px 18px;
+
+    border: 1px solid #d1d5db;
+    background: white;
+
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cancelBtn:hover {
+    background: #f9fafb;
+}
+
+.saveBtn {
+    padding: 10px 18px;
+
+    border: none;
+    background: #2563eb;
+    color: white;
+
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.saveBtn:hover {
+    background: #1d4ed8;
+}
