@@ -9,11 +9,13 @@ const headers = [
   { key: 'categoryName', text: 'Category' },
   { key: 'name', text: 'Product Name' },
   { key: 'price', text: 'Price' },
-  { key: 'rate', text: 'Rate' }
+  { key: 'rate', text: 'Rate' },
+  { key: 'action', text: '' },
 ]
 
 function Products() {
   const [products, setProducts] = useState([])
+  const [selectingProductId, setSelectingProductId] = useState(null)
   const [categories, setCategories] = useState([])
   const [keyword, setKeyword] = useState('')
   const [isOpenProductDialog, setIsOpenProductDialog] = useState(false)
@@ -43,6 +45,12 @@ function Products() {
 
   const onOpenProductDialog = () =>  {
     setIsOpenProductDialog(true)
+    setSelectingProductId(null)
+  }
+
+  const onClickEditProduct = (productId) => {
+    onOpenProductDialog()
+    setSelectingProductId(productId)
   }
 
   useEffect(() => {
@@ -73,8 +81,13 @@ function Products() {
         </div>
       </div>
 
-      <FTable columns={headers} rows={filteredProducts} />
+      <FTable
+        columns={headers}
+        rows={filteredProducts}
+        onClickEdit={onClickEditProduct}
+      />
       <ProductDialog
+        productId={selectingProductId}
         isOpen={isOpenProductDialog}
         onClose={() => setIsOpenProductDialog(false)}
         categories={categories}

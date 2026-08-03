@@ -1,6 +1,6 @@
 import styles from './index.module.css'
 
-const FTable = ({ columns, rows }) => {
+const FTable = ({ columns, rows, onClickEdit }) => {
   return (
     <div className={styles.wrapper}>
       <table className={styles.table}>
@@ -15,9 +15,17 @@ const FTable = ({ columns, rows }) => {
         <tbody>
         {rows.map((row, index) => (
           <tr key={index}>
-            {columns.map((col) => (
-              <td key={col.key}>{row[col.key]}</td>
-            ))}
+            {columns.map((col) => {
+              if (col.key === 'action') {
+                return (
+                  <td key={col.key}>
+                    <span onClick={() => onClickEdit(row.id)} className={styles.editBtn}>edit</span>
+                    <span className={styles.delBtn}>del</span>
+                  </td>
+                )
+              }
+              return <td key={col.key}>{row[col.key]}</td>
+          })}
           </tr>
         ))}
         </tbody>

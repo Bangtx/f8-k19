@@ -1,17 +1,19 @@
 import styles from './index.module.css'
 import api from '../../plugins/axios'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
-const ProductDialog = ({ isOpen, onClose, categories = [] }) => {
-  const [inputtingProduct, setInputtingProduct] = useState({
-    id: null,
-    name: null,
-    price: null,
-    description: null,
-    categoryId: null,
-    rate: null
-  })
-  if (!isOpen) return null
+const DEFAULT_PRODUCT = {
+  id: null,
+  name: null,
+  price: null,
+  description: null,
+  categoryId: null,
+  rate: null
+}
+
+const ProductDialog = ({ isOpen, productId, onClose, categories = [] }) => {
+  const [inputtingProduct, setInputtingProduct] = useState({...DEFAULT_PRODUCT})
+  // if (!isOpen) return null
 
   const body = {...inputtingProduct}
 
@@ -27,8 +29,32 @@ const ProductDialog = ({ isOpen, onClose, categories = [] }) => {
     setInputtingProduct({...inputtingProduct, [e.target.name]: e.target.value})
   }
 
+  const getCurProduct = async () => {
+    try {
+      const {data} = await api.get(`/products/${productId}`)
+      return data
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  const onMounted = async () => {
+    if (!isOpen) return
+
+    if (productId) {
+      const product = await getCurProduct()
+      setInputtingProduct({...product})
+      return
+    }
+    setInputtingProduct({...DEFAULT_PRODUCT})
+  }
+
+  useEffect(() => {
+    onMounted()
+  }, [isOpen, productId])
+
   return (
-    <div className={styles.overlay}>
+    <div className={styles.overlay} style={{display: isOpen ? 'flex': 'none'}}>
       <div className={styles.dialog}>
         <div className={styles.header}>
           <h2>Add Product</h2>
