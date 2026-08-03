@@ -7,20 +7,29 @@
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "categoryId": 1,
       "rate": 3.9
+    },
+    {
+      "id": "Uxe1h2q33vo",
+      "name": "quán áo 1",
+      "price": "1000",
+      "description": "123\n456",
+      "categoryId": "1",
+      "rate": "2"
     }
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "men's clothing"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "women's clothing"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "jewelery"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
