@@ -13,7 +13,7 @@ const ProductDialog = ({ isOpen, onClose, categories = [] }) => {
   })
   if (!isOpen) return null
 
-  const body = {}
+  const body = {...inputtingProduct}
 
   const onSave = async () => {
     try {
@@ -53,7 +53,7 @@ const ProductDialog = ({ isOpen, onClose, categories = [] }) => {
           <div className={styles.formGroup}>
             <label>Category</label>
 
-            <select>
+            <select name="categoryId" onChange={onInput}>
               <option value="">Select category</option>
 
               {categories.map((c) => (
