@@ -17,12 +17,25 @@ const ProductDialog = ({ isOpen, productId, onClose, categories = [] }) => {
 
   const body = {...inputtingProduct}
 
-  const onSave = async () => {
+  const createProduct = async () => {
     try {
-      const {data} = await api.post('/products', body)
+      await api.post('/products', body)
     } catch (e) {
       console.log(e)
     }
+  }
+
+  const updateProduct = async () => {
+    try {
+      await api.put(`/products/${productId}`, body)
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  const onSave = async () => {
+    if (productId) await updateProduct()
+    else await createProduct()
   }
 
   const onInput = (e) => {
