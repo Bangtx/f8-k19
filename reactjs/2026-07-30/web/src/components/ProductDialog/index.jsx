@@ -1,7 +1,31 @@
 import styles from './index.module.css'
+import api from '../../plugins/axios'
+import {useState} from "react";
 
-const ProductDialog = ({ open, onClose, categories = [] }) => {
-  if (!open) return null
+const ProductDialog = ({ isOpen, onClose, categories = [] }) => {
+  const [inputtingProduct, setInputtingProduct] = useState({
+    id: null,
+    name: null,
+    price: null,
+    description: null,
+    categoryId: null,
+    rate: null
+  })
+  if (!isOpen) return null
+
+  const body = {}
+
+  const onSave = async () => {
+    try {
+      const {data} = await api.post('/products', body)
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  const onInput = (e) => {
+    setInputtingProduct({...inputtingProduct, [e.target.name]: e.target.value})
+  }
 
   return (
     <div className={styles.overlay}>
@@ -17,7 +41,13 @@ const ProductDialog = ({ open, onClose, categories = [] }) => {
         <div className={styles.body}>
           <div className={styles.formGroup}>
             <label>Product Name</label>
-            <input type="text" placeholder="Enter product name" />
+            <input
+              type="text"
+              placeholder="Enter product name"
+              value={inputtingProduct.name || ''}
+              name={'name'}
+              onChange={onInput}
+            />
           </div>
 
           <div className={styles.formGroup}>
@@ -37,12 +67,24 @@ const ProductDialog = ({ open, onClose, categories = [] }) => {
           <div className={styles.row}>
             <div className={styles.formGroup}>
               <label>Price ($)</label>
-              <input type="number" placeholder="0" />
+              <input
+                type="number"
+                placeholder="0"
+                name={'price'}
+                value={inputtingProduct.price || ''}
+                onChange={onInput}
+              />
             </div>
 
             <div className={styles.formGroup}>
               <label>Rate</label>
-              <input type="number" placeholder="0" />
+              <input
+                type="number"
+                placeholder="0"
+                name={'rate'}
+                value={inputtingProduct.rate || ''}
+                onChange={onInput}
+              />
             </div>
           </div>
 
@@ -56,7 +98,13 @@ const ProductDialog = ({ open, onClose, categories = [] }) => {
 
           <div className={styles.formGroup}>
             <label>Description</label>
-            <textarea rows={5} placeholder="Product description..." />
+            <textarea
+              rows={5}
+              placeholder="Product description..."
+              name={'description'}
+              value={inputtingProduct.description || ''}
+              onChange={onInput}
+            />
           </div>
         </div>
 
@@ -65,7 +113,7 @@ const ProductDialog = ({ open, onClose, categories = [] }) => {
             Cancel
           </button>
 
-          <button className={styles.saveBtn}>
+          <button className={styles.saveBtn} onClick={onSave}>
             Save
           </button>
         </div>

@@ -16,6 +16,7 @@ function Products() {
   const [products, setProducts] = useState([])
   const [categories, setCategories] = useState([])
   const [keyword, setKeyword] = useState('')
+  const [isOpenProductDialog, setIsOpenProductDialog] = useState(false)
 
   const getData = async () => {
     try {
@@ -40,6 +41,10 @@ function Products() {
     }
   }
 
+  const onOpenProductDialog = () =>  {
+    setIsOpenProductDialog(true)
+  }
+
   useEffect(() => {
     getData()
   }, [])
@@ -62,14 +67,18 @@ function Products() {
             className={styles.search}
           />
 
-          <button className={styles.addBtn}>
+          <button className={styles.addBtn} onClick={onOpenProductDialog}>
             + Add New
           </button>
         </div>
       </div>
 
       <FTable columns={headers} rows={filteredProducts} />
-      <ProductDialog open={true}/>
+      <ProductDialog
+        isOpen={isOpenProductDialog}
+        onClose={() => setIsOpenProductDialog(false)}
+        categories={categories}
+      />
     </>
   )
 }
