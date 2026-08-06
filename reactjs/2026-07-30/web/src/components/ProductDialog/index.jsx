@@ -1,6 +1,7 @@
 import styles from './index.module.css'
 import api from '../../plugins/axios'
 import {useEffect, useState} from "react";
+import {toast} from "react-toastify";
 
 const DEFAULT_PRODUCT = {
   id: null,
@@ -13,15 +14,30 @@ const DEFAULT_PRODUCT = {
 
 const ProductDialog = ({ isOpen, productId, onClose, categories = [] }) => {
   const [inputtingProduct, setInputtingProduct] = useState({...DEFAULT_PRODUCT})
+  const [file, setFile] = useState('')
   // if (!isOpen) return null
 
   const body = {...inputtingProduct}
+
+    const readFile = async (file) => {
+      return new Promise((resolve) => {
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onloadend = () => resolve(reader.result)
+      })
+    }
+
+  const onInputFile = async (e) => {
+    // console.log(e.target.files)
+    const payload = await readFile(e.target.files[0])
+    console.log(payload)
+  }
 
   const createProduct = async () => {
     try {
       await api.post('/products', body)
     } catch (e) {
-      console.log(e)
+      toast.success("Create product successfully");
     }
   }
 
@@ -78,6 +94,34 @@ const ProductDialog = ({ isOpen, productId, onClose, categories = [] }) => {
         </div>
 
         <div className={styles.body}>
+          <div className={styles.uploadBox}>
+            <input
+              type="file"
+              accept="image/*"
+              className={styles.fileInput}
+              src={file}
+              onChange={onInputFile}
+            />
+
+            <div className={styles.uploadContent}>
+              <div className={styles.uploadIcon}>
+                📷
+              </div>
+
+              <h4>Upload Product Image</h4>
+
+              <p>
+                Drag & Drop your image here
+                <br />
+                or click to browse
+              </p>
+
+              <span className={styles.uploadHint}>
+                PNG, JPG, WEBP (Max 5MB)
+              </span>
+            </div>
+          </div>
+
           <div className={styles.formGroup}>
             <label>Product Name</label>
             <input
@@ -127,13 +171,13 @@ const ProductDialog = ({ isOpen, productId, onClose, categories = [] }) => {
             </div>
           </div>
 
-          <div className={styles.formGroup}>
+          {/*<div className={styles.formGroup}>
             <label>Image URL</label>
             <input
               type="text"
               placeholder="https://example.com/image.jpg"
             />
-          </div>
+          </div>*/}
 
           <div className={styles.formGroup}>
             <label>Description</label>

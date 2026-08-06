@@ -3,6 +3,7 @@ import api from '../../plugins/axios'
 import FTable from '../../components/FTable'
 import ProductDialog from '../../components/ProductDialog'
 import styles from './index.module.css'
+import { toast } from 'react-toastify';
 
 const headers = [
   { key: 'image', text: 'Image' },
@@ -24,7 +25,7 @@ function Products() {
     try {
       const [productData, categoryData] = await Promise.all([
         api.get('products'),
-        api.get('categories')
+        api.get('kategories')
       ])
 
       const productsTmp = productData.data
@@ -39,7 +40,7 @@ function Products() {
       setProducts(productsTmp)
       setCategories(categoryData.data)
     } catch (e) {
-      console.log(e)
+      toast.error("get data failed!");
     }
   }
 
