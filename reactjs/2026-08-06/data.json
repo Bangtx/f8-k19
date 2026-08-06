@@ -1,0 +1,264 @@
+{
+  "category_groups": [
+    {
+      "id": "group-1",
+      "group_name": "Kinh doanh / Bán hàng",
+      "group_slug": "kinh-doanh-ban-hang",
+      "categories": [
+        {
+          "id": "cat-1-1",
+          "name": "Sales Xuất nhập khẩu/Logistics",
+          "slug": "sales-xuat-nhap-khau-logistics"
+        },
+        {
+          "id": "cat-1-2",
+          "name": "Sales Bất động sản",
+          "slug": "sales-bat-dong-san"
+        },
+        {
+          "id": "cat-1-3",
+          "name": "Sales Xây dựng",
+          "slug": "sales-xay-dung"
+        }
+      ]
+    },
+    {
+      "id": "group-2",
+      "group_name": "Marketing / PR / Quảng cáo",
+      "group_slug": "marketing-pr-quang-cao",
+      "categories": [
+        {
+          "id": "cat-2-1",
+          "name": "Digital Marketing",
+          "slug": "digital-marketing"
+        },
+        {
+          "id": "cat-2-2",
+          "name": "Branding & Communications",
+          "slug": "branding-communications"
+        }
+      ]
+    },
+    {
+      "id": "group-3",
+      "group_name": "Chăm sóc khách hàng (Customer Service) / Vận hành",
+      "group_slug": "cham-soc-khach-hang-van-hanh",
+      "categories": [
+        {
+          "id": "cat-3-1",
+          "name": "Tư vấn & Chăm sóc khách hàng",
+          "slug": "tu-van-cham-soc-khach-hang"
+        }
+      ]
+    },
+    {
+      "id": "group-4",
+      "group_name": "Nhân sự / Hành chính / Pháp chế",
+      "group_slug": "nhan-su-hanh-chinh-phap-che",
+      "categories": [
+        {
+          "id": "cat-4-1",
+          "name": "Nhân sự & Tuyển dụng",
+          "slug": "nhan-su-tuyen-dung"
+        }
+      ]
+    },
+    {
+      "id": "group-5",
+      "group_name": "Công nghệ Thông tin",
+      "group_slug": "cong-nghe-thong-tin",
+      "categories": [
+        {
+          "id": "cat-5-1",
+          "name": "Lập trình phần mềm",
+          "slug": "lap-trinh-phan-mem"
+        }
+      ]
+    },
+    {
+      "id": "group-6",
+      "group_name": "Lao động phổ thông",
+      "group_slug": "lao-dong-pho-thong"
+    }
+  ],
+  "companies": [
+    {
+      "id": "comp-001",
+      "status": "APPROVED",
+      "verification_tier": "VERIFIED",
+      "tax_code": "0108888888",
+      "company_name": "CÔNG TY CỔ PHẦN CÔNG NGHỆ TOPCV VIỆT NAM",
+      "international_name": "TOPCV VIETNAM TECHNOLOGY JOINT STOCK COMPANY",
+      "short_name": "TOPCV VIETNAM",
+      "director": "Thái Trí Hùng",
+      "headquarters_address": "Tầng 3, Tòa nhà FS - GoldSeason, 47 Nguyễn Tuân, Phường Thanh Xuân Trung, Quận Thanh Xuân, Thành phố Hà Nội, Việt Nam",
+      "issued_date": "2019-03-15",
+      "email": "contact@topcv.vn",
+      "phone_number": "02466805588",
+      "website": "https://www.topcv.vn",
+      "logo_url": "https://cdn-new.topcv.vn/posts/test-logo-topcv.png",
+      "company_size": "500-1000 nhân viên",
+      "category": "Công nghệ Thông tin",
+      "address_list": [
+        {
+          "city_id": 1,
+          "city_name": "Hà Nội",
+          "address_detail": "Tầng 3, Tòa FS GoldSeason, 47 Nguyễn Tuân, Thanh Xuân"
+        },
+        {
+          "city_id": 2,
+          "city_name": "Thành phố Hồ Chí Minh",
+          "address_detail": "Tầng 8, Tòa nhà Hà Đô Airport Building, 2 Hồng Hà, Phường 2, Tân Bình"
+        }
+      ],
+      "description_html": "<div><h3>Về TopCV Việt Nam</h3><p>TopCV là công ty công nghệ hàng đầu trong lĩnh vực HR Tech tại Việt Nam, cung cấp giải pháp tuyển dụng và kết nối cơ hội việc làm cho hàng triệu ứng viên.</p><h4>Môi trường làm việc</h4><ul><li>Môi trường trẻ trung, năng động, khuyến khích sáng tạo.</li><li>Chế độ đãi ngộ hấp dẫn, thưởng performance theo quý.</li><li>Chương trình đào tạo và phát triển lộ trình thăng tiến rõ ràng.</li></ul></div>"
+    },
+    {
+      "id": "comp-002",
+      "status": "PENDING",
+      "verification_tier": "UNVERIFIED",
+      "tax_code": "0316789012",
+      "company_name": "CÔNG TY TNHH GIẢI PHÁP PHẦN MỀM GLOBAL LOGISTICS",
+      "international_name": "GLOBAL LOGISTICS SOFTWARE SOLUTIONS COMPANY LIMITED",
+      "short_name": "GL SOLUTIONS",
+      "director": "Nguyễn Văn An",
+      "headquarters_address": "Số 120 Đường Cộng Hòa, Phường 4, Quận Tân Bình, Thành phố Hồ Chí Minh, Việt Nam",
+      "issued_date": "2021-06-20",
+      "email": "hr@globallogistics.io",
+      "phone_number": "0909123456",
+      "website": "https://globallogistics.io",
+      "logo_url": "https://cdn-new.topcv.vn/posts/default-logo.png",
+      "company_size": "100-499 nhân viên",
+      "category": "Sales Xuất nhập khẩu/Logistics",
+      "address_list": [
+        {
+          "city_id": 2,
+          "city_name": "Thành phố Hồ Chí Minh",
+          "address_detail": "Số 120 Đường Cộng Hòa, Phường 4, Quận Tân Bình"
+        }
+      ],
+      "description_html": "<div><h3>Giới thiệu về Global Logistics Solutions</h3><p>Chúng tôi chuyên cung cấp các giải pháp công nghệ chuyển đổi số cho chuỗi cung ứng và vận tải đa phương thức quốc tế.</p><p>Sứ mệnh của chúng tôi là tối ưu hóa chi phí vận chuyển cho các doanh nghiệp vừa và nhỏ tại Đông Nam Á.</p></div>"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-001",
+      "company": {
+        "id": "comp-001",
+        "status": "APPROVED",
+        "verification_tier": "VERIFIED",
+        "tax_code": "0108888888",
+        "company_name": "CÔNG TY CỔ PHẦN CÔNG NGHỆ TOPCV VIỆT NAM",
+        "international_name": "TOPCV VIETNAM TECHNOLOGY JOINT STOCK COMPANY",
+        "short_name": "TOPCV VIETNAM",
+        "director": "Thái Trí Hùng",
+        "headquarters_address": "Tầng 3, Tòa nhà FS - GoldSeason, 47 Nguyễn Tuân, Phường Thanh Xuân Trung, Quận Thanh Xuân, Thành phố Hà Nội, Việt Nam",
+        "issued_date": "2019-03-15",
+        "email": "contact@topcv.vn",
+        "phone_number": "02466805588",
+        "website": "https://www.topcv.vn",
+        "logo_url": "https://cdn-new.topcv.vn/posts/test-logo-topcv.png",
+        "company_size": "500-1000 nhân viên",
+        "category": "Công nghệ Thông tin",
+        "address_list": [
+          {
+            "city_id": 1,
+            "city_name": "Hà Nội",
+            "address_detail": "Tầng 3, Tòa FS GoldSeason, 47 Nguyễn Tuân, Thanh Xuân"
+          },
+          {
+            "city_id": 2,
+            "city_name": "Thành phố Hồ Chí Minh",
+            "address_detail": "Tầng 8, Tòa nhà Hà Đô Airport Building, 2 Hồng Hà, Phường 2, Tân Bình"
+          }
+        ],
+        "description_html": "<div><h3>Về TopCV Việt Nam</h3><p>TopCV là công ty công nghệ hàng đầu trong lĩnh vực HR Tech tại Việt Nam, cung cấp giải pháp tuyển dụng và kết nối cơ hội việc làm cho hàng triệu ứng viên.</p><h4>Môi trường làm việc</h4><ul><li>Môi trường trẻ trung, năng động, khuyến khích sáng tạo.</li><li>Chế độ đãi ngộ hấp dẫn, thưởng performance theo quý.</li><li>Chương trình đào tạo và phát triển lộ trình thăng tiến rõ ràng.</li></ul></div>"
+      },
+      "title": "Senior Frontend Developer (ReactJS / Next.js)",
+      "slug": "senior-frontend-developer-reactjs-nextjs-001",
+      "category": "Lập trình phần mềm",
+      "specialty": "Frontend Developer",
+      "job_type": "FULL_TIME",
+      "experience_level": "3-5 năm",
+      "gender": "NOT_REQUIRED",
+      "quantity": 3,
+      "salary": {
+        "type": "RANGE",
+        "min": 25000000,
+        "max": 40000000,
+        "currency": "VND",
+        "is_negotiable": false
+      },
+      "work_location": [
+        {
+          "city_id": 1,
+          "city_name": "Hà Nội",
+          "address_detail": "Tầng 3, Tòa FS GoldSeason, 47 Nguyễn Tuân, Thanh Xuân"
+        }
+      ],
+      "deadline": "2026-09-30T23:59:59Z",
+      "status": "PUBLISHED",
+      "is_hot": true,
+      "description_html": "<div><h3>Mô tả công việc</h3><ul><li>Phát triển các tính năng UI/UX mới cho nền tảng Tuyển dụng TopCV bằng ReactJS, Next.js.</li><li>Tối ưu hóa hiệu năng ứng dụng (PageSpeed, Web Vitals) và nâng cao trải nghiệm người dùng.</li><li>Phối hợp chặt chẽ với đội ngũ Product Manager, UI/UX Designer và Backend Engineer.</li></ul></div>",
+      "requirements_html": "<div><h3>Yêu cầu ứng viên</h3><ul><li>Có tối thiểu 3 năm kinh nghiệm làm việc với ReactJS, Next.js, TypeScript.</li><li>Thành thạo Redux/Zustand, TailwindCSS/SCSS, RESTful API, GraphQL.</li><li>Có kinh nghiệm tối ưu SEO Web và Server-Side Rendering (SSR).</li></ul></div>",
+      "benefits_html": "<div><h3>Quyền lợi</h3><ul><li>Lương cứng up to 40M + Thưởng hiệu suất dự án theo quý.</li><li>Được đóng BHXH đầy đủ theo luật lao động.</li><li>Khám sức khỏe định kỳ hàng năm, du lịch/teambuilding cùng công ty.</li><li>Lộ trình thăng tiến Technical Lead rõ ràng.</li></ul></div>"
+    },
+    {
+      "id": "job-002",
+      "company": {
+        "id": "comp-002",
+        "status": "PENDING",
+        "verification_tier": "UNVERIFIED",
+        "tax_code": "0316789012",
+        "company_name": "CÔNG TY TNHH GIẢI PHÁP PHẦN MỀM GLOBAL LOGISTICS",
+        "international_name": "GLOBAL LOGISTICS SOFTWARE SOLUTIONS COMPANY LIMITED",
+        "short_name": "GL SOLUTIONS",
+        "director": "Nguyễn Văn An",
+        "headquarters_address": "Số 120 Đường Cộng Hòa, Phường 4, Quận Tân Bình, Thành phố Hồ Chí Minh, Việt Nam",
+        "issued_date": "2021-06-20",
+        "email": "hr@globallogistics.io",
+        "phone_number": "0909123456",
+        "website": "https://globallogistics.io",
+        "logo_url": "https://cdn-new.topcv.vn/posts/default-logo.png",
+        "company_size": "100-499 nhân viên",
+        "category": "Sales Xuất nhập khẩu/Logistics",
+        "address_list": [
+          {
+            "city_id": 2,
+            "city_name": "Thành phố Hồ Chí Minh",
+            "address_detail": "Số 120 Đường Cộng Hòa, Phường 4, Quận Tân Bình"
+          }
+        ],
+        "description_html": "<div><h3>Giới thiệu về Global Logistics Solutions</h3><p>Chúng tôi chuyên cung cấp các giải pháp công nghệ chuyển đổi số cho chuỗi cung ứng và vận tải đa phương thức quốc tế.</p><p>Sứ mệnh của chúng tôi là tối ưu hóa chi phí vận chuyển cho các doanh nghiệp vừa và nhỏ tại Đông Nam Á.</p></div>"
+      },
+      "title": "Trưởng Nhóm Sales Logistics / Freight Forwarding",
+      "slug": "truong-nhom-sales-logistics-freight-forwarding-002",
+      "category": "Sales Xuất nhập khẩu/Logistics",
+      "specialty": "Sales Logistics",
+      "job_type": "FULL_TIME",
+      "experience_level": "2-3 năm",
+      "gender": "NOT_REQUIRED",
+      "quantity": 2,
+      "salary": {
+        "type": "AGREEMENT",
+        "min": 0,
+        "max": 0,
+        "currency": "VND",
+        "is_negotiable": true
+      },
+      "work_location": [
+        {
+          "city_id": 2,
+          "city_name": "Thành phố Hồ Chí Minh",
+          "address_detail": "Số 120 Đường Cộng Hòa, Phường 4, Quận Tân Bình"
+        }
+      ],
+      "deadline": "2026-09-15T23:59:59Z",
+      "status": "PUBLISHED",
+      "is_hot": false,
+      "description_html": "<div><h3>Mô tả công việc</h3><ul><li>Tìm kiếm, tiếp cận và tư vấn khách hàng doanh nghiệp có nhu cầu xuất nhập khẩu đường biển (FCL/LCL), đường hàng không (Air).</li><li>Quản lý và dẫn dắt đội ngũ Sales từ 3-5 thành viên hoàn thành chỉ tiêu doanh số.</li><li>Duy trì mối quan hệ tốt với các hãng tàu, đại lý vận tải quốc tế.</li></ul></div>",
+      "requirements_html": "<div><h3>Yêu cầu ứng viên</h3><ul><li>Tốt nghiệp ĐH chuyên ngành Logistics, Ngoại thương, Kinh tế đối ngoại.</li><li>Tối thiểu 2 năm kinh nghiệm Sales trong lĩnh vực Freight Forwarding/Logistics.</li><li>Tiếng Anh giao tiếp tốt (đặc biệt là đọc viết thư từ thương mại).</li></ul></div>",
+      "benefits_html": "<div><h3>Quyền lợi</h3><ul><li>Lương cứng 15M - 20M + % Hoa hồng doanh số cao (Thu nhập trung bình 30M+).</li><li>Được trợ cấp điện thoại, xăng xe, phí tiếp khách hàng.</li><li>Thưởng tháng 13 và thưởng vượt KPI năm.</li></ul></div>"
+    }
+  ]
+}
